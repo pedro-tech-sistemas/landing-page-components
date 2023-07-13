@@ -1,5 +1,5 @@
 import React from 'react'
-import '../src/global.css';
+import '../src/global.css'
 
 import { withThemeByClassName } from '@storybook/addon-styling'
 
@@ -13,7 +13,6 @@ export const parameters = {
     },
   },
 }
-
 
 export const decorators = [
   (Story) => <Story />, // Adds theme switching support.
