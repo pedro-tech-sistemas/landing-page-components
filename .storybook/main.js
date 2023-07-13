@@ -3,12 +3,6 @@ module.exports = {
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-links',
-    {
-      name: '@storybook/addon-styling',
-      options: {
-        postCss: true,
-      },
-    },
   ],
   framework: {
     name: '@storybook/react-webpack5',
