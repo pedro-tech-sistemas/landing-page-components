@@ -1,7 +1,7 @@
 import React from 'react'
 import * as S from './LandingPageHeaderRoot.styles'
 
-export interface LandingPageHeaderProps {
+export interface LandingPageHeaderRootProps {
   isFixed?: boolean
   bgColor?: string
   isBgTransparent?: boolean
@@ -9,13 +9,13 @@ export interface LandingPageHeaderProps {
   children: React.ReactNode
 }
 
-export default function LandingPageHeader({
+export default function LandingPageHeaderRoot({
   isFixed = false,
   bgColor = 'white',
   isBgTransparent = false,
   hasBorderBottom = true,
   children,
-}: LandingPageHeaderProps) {
+}: LandingPageHeaderRootProps) {
   return (
     <S.Root $isFixed={isFixed} $bgColor={bgColor} $isBgTransparent={isBgTransparent} $hasBorderBottom={hasBorderBottom}>
       {children}

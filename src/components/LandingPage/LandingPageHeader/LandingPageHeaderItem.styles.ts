@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-export const Root = styled.a<{ $color: string; $colorOnHover: string }>`
+export const Root = styled.a<{
+  $color: string
+  $colorOnHover: string
+  $isClicable: boolean
+}>`
   color: ${({ $color }) => $color};
   font-weight: 500;
 
@@ -9,7 +13,7 @@ export const Root = styled.a<{ $color: string; $colorOnHover: string }>`
   }
 
   &:hover {
-    cursor: pointer;
+    cursor: ${({ $isClicable }) => ($isClicable ? `pointer` : `default`)};
     color: ${({ $colorOnHover }) => $colorOnHover};
   }
 `

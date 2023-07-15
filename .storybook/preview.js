@@ -2,6 +2,7 @@ import React from 'react'
 import '../src/global.css'
 
 import { withThemeByClassName } from '@storybook/addon-styling'
+import { ThemeProvider } from 'styled-components'
 
 export const parameters = {
   layout: 'fullscreen',
@@ -14,8 +15,22 @@ export const parameters = {
   },
 }
 
+const theme = {
+  breakpoints: {
+    xs: "0px",
+    sm: "600px",
+    md: "900px",
+    lg: "1200px",
+    xl: "1536px",
+  }
+};
+
 export const decorators = [
-  (Story) => <Story />, // Adds theme switching support.
+  (Story) => (
+    <ThemeProvider theme={theme}>
+      <Story />
+    </ThemeProvider>
+  ),
   withThemeByClassName({
     themes: {
       light: 'light',

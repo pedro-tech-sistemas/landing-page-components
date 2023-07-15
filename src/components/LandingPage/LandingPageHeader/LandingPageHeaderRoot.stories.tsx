@@ -1,7 +1,7 @@
 import React from 'react'
 import { Meta, StoryFn } from '@storybook/react'
 
-import LandingPageHeader, { LandingPageHeaderProps } from './LandingPageHeaderRoot'
+import LandingPageHeader, { LandingPageHeaderRootProps } from './LandingPageHeaderRoot'
 import LandingPageHeaderItem from './LandingPageHeaderItem'
 
 const meta: Meta = {
@@ -11,19 +11,19 @@ const meta: Meta = {
 
 export default meta
 
-const Template: StoryFn<LandingPageHeaderProps> = (args: LandingPageHeaderProps) => (
+const Template: StoryFn<LandingPageHeaderRootProps> = (args: LandingPageHeaderRootProps) => (
   <>
     <LandingPageHeader {...args} />
-    <div style={{ height: '1000px', marginTop: '100vh' }}></div>
+    <div style={{ height: '1000px', marginTop: '100vh' }} />
   </>
 )
 
-const TemplateComplete: StoryFn<LandingPageHeaderProps> = (args: LandingPageHeaderProps) => (
+const TemplateComplete: StoryFn<LandingPageHeaderRootProps> = (args: LandingPageHeaderRootProps) => (
   <LandingPageHeader {...args}>
     <LandingPageHeaderItem>This is the Company name</LandingPageHeaderItem>
     <div style={{ display: 'flex' }}>
-      <LandingPageHeaderItem>Item 1</LandingPageHeaderItem>
-      <LandingPageHeaderItem>Item 2</LandingPageHeaderItem>
+      <LandingPageHeaderItem colorOnHover='red'>Item 1</LandingPageHeaderItem>
+      <LandingPageHeaderItem colorOnHover='red'>Item 2</LandingPageHeaderItem>
     </div>
   </LandingPageHeader>
 )

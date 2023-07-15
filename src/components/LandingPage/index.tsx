@@ -1,4 +1,5 @@
+import LandingPageHeader from './LandingPageHeader'
+
 export const LandingPage = {
-  // Root: LandingPageRoot,
-  // Header: LandingPageHeader,
+  Header: LandingPageHeader,
 }

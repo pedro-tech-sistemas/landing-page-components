@@ -13,7 +13,7 @@ export default function LandingPageHeaderItem({
   redirectTo,
   scrollTo,
   color = '#e4e4e4',
-  colorOnHover = '#f03d3d',
+  colorOnHover = '',
   children,
 }: LandingPageHeaderItemProps) {
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
@@ -27,7 +27,13 @@ export default function LandingPageHeaderItem({
   }
 
   return (
-    <S.Root href={scrollTo ? undefined : redirectTo} onClick={handleClick} $color={color} $colorOnHover={colorOnHover}>
+    <S.Root
+      href={scrollTo ? undefined : redirectTo}
+      onClick={handleClick}
+      $color={color}
+      $colorOnHover={colorOnHover}
+      $isClicable={!!(scrollTo || redirectTo)}
+    >
       {children}
     </S.Root>
   )
