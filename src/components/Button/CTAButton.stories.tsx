@@ -21,7 +21,7 @@ export const Default = Template.bind({})
 Default.args = {
   children: 'Começar',
   sx: {
-    bgcolor: '#6161ff'
+    bgcolor: '#6161ff',
   },
   endIcon: <EastIcon />,
 }

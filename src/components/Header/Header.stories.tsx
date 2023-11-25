@@ -1,5 +1,6 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
+import { Box } from '@mui/material';
 
 import Header, { HeaderProps } from './Header';
 
@@ -11,9 +12,11 @@ const meta: Meta = {
 export default meta
 
 const Template: StoryFn<HeaderProps> = (args: HeaderProps) => (
-  <Header
-    {...args}
-  />
+  <>
+    <Header {...args} />
+
+    <Box height="200vh" />
+  </>
 )
 
 export const Default = Template.bind({})
@@ -24,4 +27,8 @@ Default.args = {
     {label: 'Plataforma', url: ''},
     {label: 'Recursos', url: ''},
   ],
+  ctaButton: {
+    label: 'Whatsapp',
+    action: () => console.log('Função!'),
+  },
 }

@@ -1,5 +1,6 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, ReactElement } from 'react';
 import {
+  AppBar,
   Box,
   Drawer,
   IconButton,
@@ -8,10 +9,11 @@ import {
   ListItemButton,
   ListItemText,
   Stack,
-  Typography,
+  useScrollTrigger
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import CTAButton from '../Button/CTAButton';
 
 export interface HeaderProps {
   logo?: string;
@@ -20,13 +22,31 @@ export interface HeaderProps {
     url: string;
   }[];
   textColor?: CSSProperties['color'];
+  ctaButton?: {
+    label: string;
+    action: () => void;
+  };
   window?: () => Window;
+}
+
+
+function ElevationScroll({ children }: { children: ReactElement }) {
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+    target: window ? window : undefined,
+  });
+
+  return React.cloneElement(children, {
+    elevation: trigger ? 4 : 0,
+  });
 }
 
 export default function Header({
   logo,
   links,
   textColor,
+  ctaButton,
   window,
 }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -60,58 +80,77 @@ export default function Header({
   );
 
   return (
-    <Stack
-      component="nav"
-      direction="row"
-      justifyContent="space-between"
-      alignItems="center"
-    >
-      {logo && (
-        <img src={logo} />
-      )}
+    <ElevationScroll>
+      <AppBar
+        color="inherit"
+        sx={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          py: 1,
+          px: 1,
+        }}
+      >
+        {logo && (
+          <img src={logo} />
+        )}
 
-      <List sx={{ display: { xs: 'none', md: 'flex' }, py: 0 }}>
-        {links.map((link) => (
-          <ListItem
-            key={link.label}
-            disablePadding
-            sx={{ width: 'auto' }}
-          >
-            <ListItemButton href={link.url} sx={{ textAlign: 'center' }}>
-              <ListItemText primary={link.label} primaryTypographyProps={{ color: textColor }} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-
-      <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="menu-appbar"
-          aria-haspopup="true"
-          onClick={handleDrawerToggle}
-          color="inherit"
-        >
-          <MenuIcon />
-        </IconButton>
-
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true,
-          }}
+        <List
           sx={{
-            display: { xs: 'block', md: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '100%' },
+            display: { xs: 'none', md: 'flex' },
           }}
         >
-          {drawer}
-        </Drawer>
-      </Box>
-    </Stack>
+          {links.map((link) => (
+            <ListItem
+              key={link.label}
+              disablePadding
+              sx={{ width: 'auto' }}
+            >
+              <ListItemButton href={link.url} sx={{ textAlign: 'center' }}>
+                <ListItemText primary={link.label} primaryTypographyProps={{ color: textColor }} />
+              </ListItemButton>
+            </ListItem>
+          ))}
+
+          {ctaButton && (
+            <CTAButton
+              sx={{ p: '8px 24px', ml: 1, width: 'fit-content' }}
+              onClick={ctaButton.action}
+            >
+              {ctaButton?.label}
+            </CTAButton>
+          )}
+        </List>
+
+        <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={handleDrawerToggle}
+            color="inherit"
+          >
+            <MenuIcon />
+          </IconButton>
+
+          <Drawer
+            container={container}
+            variant="temporary"
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+            ModalProps={{
+              keepMounted: true,
+            }}
+            sx={{
+              display: { xs: 'block', md: 'none' },
+              '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '100%' },
+            }}
+          >
+            {drawer}
+          </Drawer>
+        </Box>
+      </AppBar>
+    </ElevationScroll>
   )
 }

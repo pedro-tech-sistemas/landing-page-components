@@ -11,32 +11,32 @@ const meta: Meta = {
 export default meta
 
 const Template: StoryFn<FooterProps> = (args: FooterProps) => (
-  <Footer
-    copy='2023 Airbnb, Inc.'
-    links={[
-      { href: '#', labelText: 'blabla' },
-      { href: '#', labelText: 'blabla' },
-    ]}
-    socialLinks={[
-      {
-        icon: 'facebook',
-        url: '',
-      },
-      {
-        icon: 'instagram',
-        url: '',
-      },
-      {
-        icon: 'linkedin',
-        url: '',
-      },
-      {
-        icon: 'twitter',
-        url: '',
-      },
-    ]}
-  />
+  <Footer {...args} />
 )
 
 export const Default = Template.bind({})
-Default.args = {}
+Default.args = {
+  copy: '2023 Airbnb, Inc.',
+  links: [
+    { href: '#', labelText: 'blabla' },
+    { href: '#', labelText: 'blabla' },
+  ],
+  socialLinks: [
+    {
+      icon: 'facebook',
+      url: '',
+    },
+    {
+      icon: 'instagram',
+      url: '',
+    },
+    {
+      icon: 'linkedin',
+      url: '',
+    },
+    {
+      icon: 'twitter',
+      url: '',
+    },
+  ],
+}

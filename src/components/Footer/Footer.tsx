@@ -33,10 +33,8 @@ export default function Footer({
   socialLinks,
   otherLeftOptions,
   otherRightOptions,
-  bgcolor = '#ececec',
   padding = '48px',
   hasBorder = true,
-  borderColor = '#a1a1a1',
   ...rest
 }: FooterProps) {
   const linkStyles: SxProps = {
@@ -50,6 +48,7 @@ export default function Footer({
   const commonTypographyProps = {
     fontWeight: 'light',
     fontSize: '1rem',
+    color: 'grey.100',
   }
 
   const renderIcon = (icon: 'facebook' | 'instagram' | 'linkedin' | 'twitter') => {
@@ -73,20 +72,34 @@ export default function Footer({
       justifyContent="space-between"
       alignItems="center"
       rowGap={2}
-      bgcolor={bgcolor}
       sx={{
-        borderTop: hasBorder ? `2px solid ${borderColor}` : "",
+        borderTop: hasBorder ? '2px solid' : '',
+        borderColor: 'primary.light',
         flexDirection: { xs: 'column', md: 'row' },
+        bgcolor: 'primary.main',
+        color: 'grey.100',
         ...rest.sx
       }}
       {...rest}
     >
-      <Stack direction="row" divider={<span>·</span>} spacing={2}>
+      <Stack
+        direction="row"
+        divider={<span>·</span>}
+        spacing={2}
+      >
         <Typography {...commonTypographyProps}>© {copy}</Typography>
 
         {links?.map(({ labelText, href }, index) => (
-          <Link key={`${labelText}-${index}`} href={href} sx={linkStyles}>
-            <Typography {...commonTypographyProps}>{labelText}</Typography>
+          <Link
+            key={`${labelText}-${index}`}
+            href={href}
+            sx={linkStyles}
+          >
+            <Typography
+              {...commonTypographyProps}
+            >
+              {labelText}
+            </Typography>
           </Link>
         ))}
 
