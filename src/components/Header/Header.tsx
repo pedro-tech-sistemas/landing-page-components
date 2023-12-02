@@ -1,4 +1,5 @@
-import React, { CSSProperties, ReactElement } from 'react';
+import React, { CSSProperties, ReactElement, ReactNode } from 'react';
+
 import {
   AppBar,
   Box,
@@ -8,12 +9,12 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
-  Stack,
   useScrollTrigger
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import CTAButton from '../Button/CTAButton';
+
+import CTAButton from '../Buttons/CTAButton';
 
 export interface HeaderProps {
   logo?: string;
@@ -22,11 +23,9 @@ export interface HeaderProps {
     url: string;
   }[];
   textColor?: CSSProperties['color'];
-  ctaButton?: {
-    label: string;
-    action: () => void;
-  };
-  window?: () => Window;
+  ctaButtonLabel?: string;
+  ctaButtonAction?: () => void;
+  ctaButtonIcon: ReactNode;
 }
 
 
@@ -46,8 +45,9 @@ export default function Header({
   logo,
   links,
   textColor,
-  ctaButton,
-  window,
+  ctaButtonAction,
+  ctaButtonLabel,
+  ctaButtonIcon,
 }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -55,7 +55,7 @@ export default function Header({
     setMobileOpen((prevState) => !prevState);
   };
 
-  const container = window !== undefined ? () => window().document.body : undefined;
+  const container = window !== undefined ? () => window.document.body : undefined;
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
@@ -80,77 +80,83 @@ export default function Header({
   );
 
   return (
-    <ElevationScroll>
-      <AppBar
-        color="inherit"
-        sx={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          py: 1,
-          px: 1,
-        }}
-      >
-        {logo && (
-          <img src={logo} />
-        )}
-
-        <List
+    <>
+    
+      <ElevationScroll>
+        <AppBar
+          color="inherit"
           sx={{
-            display: { xs: 'none', md: 'flex' },
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            py: 1,
+            px: 1,
           }}
         >
-          {links.map((link) => (
-            <ListItem
-              key={link.label}
-              disablePadding
-              sx={{ width: 'auto' }}
-            >
-              <ListItemButton href={link.url} sx={{ textAlign: 'center' }}>
-                <ListItemText primary={link.label} primaryTypographyProps={{ color: textColor }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-
-          {ctaButton && (
-            <CTAButton
-              sx={{ p: '8px 24px', ml: 1, width: 'fit-content' }}
-              onClick={ctaButton.action}
-            >
-              {ctaButton?.label}
-            </CTAButton>
+          {logo && (
+            <img src={logo} />
           )}
-        </List>
 
-        <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-          <IconButton
-            size="large"
-            aria-label="account of current user"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            onClick={handleDrawerToggle}
-            color="inherit"
-          >
-            <MenuIcon />
-          </IconButton>
-
-          <Drawer
-            container={container}
-            variant="temporary"
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-            ModalProps={{
-              keepMounted: true,
-            }}
+          <List
             sx={{
-              display: { xs: 'block', md: 'none' },
-              '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '100%' },
+              display: { xs: 'none', md: 'flex' },
             }}
           >
-            {drawer}
-          </Drawer>
-        </Box>
-      </AppBar>
-    </ElevationScroll>
+            {links.map((link) => (
+              <ListItem
+                key={link.label}
+                disablePadding
+                sx={{ width: 'auto' }}
+              >
+                <ListItemButton href={link.url} sx={{ textAlign: 'center' }}>
+                  <ListItemText primary={link.label} primaryTypographyProps={{ color: textColor }} />
+                </ListItemButton>
+              </ListItem>
+            ))}
+
+            {(ctaButtonAction && ctaButtonLabel) && (
+              <CTAButton
+                sx={{ p: '8px 24px', ml: 1, maxWidth: 'fit-content' }}
+                onClick={ctaButtonAction}
+                endIcon={ctaButtonIcon}
+              >
+                {ctaButtonLabel}
+              </CTAButton>
+            )}
+          </List>
+
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleDrawerToggle}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+
+            <Drawer
+              container={container}
+              variant="temporary"
+              open={mobileOpen}
+              onClose={handleDrawerToggle}
+              ModalProps={{
+                keepMounted: true,
+              }}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+                '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '100%' },
+              }}
+            >
+              {drawer}
+            </Drawer>
+          </Box>
+        </AppBar>
+      </ElevationScroll>
+
+      <Box id="Spacing" width="100%" height="80px" />
+    </>
   )
 }

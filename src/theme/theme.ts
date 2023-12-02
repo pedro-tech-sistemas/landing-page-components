@@ -20,11 +20,21 @@ export const theme = createTheme({
       wordBreak: 'break-word',
     },
     h2: {
-      fontSize: '1.375rem',
-      fontWeight: '300',
+      fontSize: '3rem',
+      fontWeight: '600',
       lineHeight: '40px',
       wordBreak: 'break-word',
     },
+    h3: {
+      fontSize: '1.25rem',
+      fontWeight: '600',
+      lineHeight: 'auto',
+    },
+    h4: {
+      fontSize: '1rem',
+      fontWeight: '600',
+      lineHeight: 'auto',
+    }
   },
   palette: {
     primary: {

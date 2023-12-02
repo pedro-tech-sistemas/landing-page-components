@@ -1,35 +1,30 @@
-import React from 'react';
-import { Container, Stack, StackProps, Typography } from '@mui/material';
+import React, { ReactNode } from 'react';
+import { Stack, StackProps } from '@mui/material';
 
 export interface CenteredSectionProps extends StackProps {
-  title: string;
-  subtitle?: string;
-  isH1?: boolean;
+  align: 'row-start' | 'row-center' | 'row-end' | 'column-start' | 'column-center' | 'column-end';
+  children: ReactNode;
 }
 
 export default function CenteredSection({
-  title,
-  subtitle,
-  isH1 = false,
-  ...rest
+  align = 'column-center',
+  children,
+  ...restProps
 }: CenteredSectionProps) {
-  return (
-    <Stack {...rest}>
-      <Container maxWidth="lg">
-        <Stack spacing={2}>
-          <Typography
-            variant={isH1 ? 'h1' : 'h2'}
-          >
-            {title}
-          </Typography>
+  const isColumn = align.startsWith('column');
+  const isCenter = align.endsWith('center');
+  const isEnd = align.endsWith('end');
 
-          <Typography
-            variant={isH1 ? 'h2' : 'h3'}
-          >
-            {subtitle}
-          </Typography>
-        </Stack>
-      </Container>
+  const direction = isColumn ? 'column' : 'row';
+  const alignItems = isCenter ? 'center' : isEnd ? 'end' : 'start';
+
+  return (
+    <Stack
+      direction={direction}
+      alignItems={alignItems}
+      {...restProps}
+    >
+      {children}
     </Stack>
   );
 }

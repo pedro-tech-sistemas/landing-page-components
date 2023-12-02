@@ -27,8 +27,6 @@ Default.args = {
     {label: 'Plataforma', url: ''},
     {label: 'Recursos', url: ''},
   ],
-  ctaButton: {
-    label: 'Whatsapp',
-    action: () => console.log('Função!'),
-  },
+  ctaButtonAction: () => console.log('Function'),
+  ctaButtonLabel: 'Whatsapp',
 }

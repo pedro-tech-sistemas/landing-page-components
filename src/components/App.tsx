@@ -20,7 +20,7 @@ const MyCounter = ({ value = 0 }: Props) => {
       <button onClick={onMinus}>-</button>
       <button onClick={onPlus}>+</button>
     </div>
-  )
+  );
 }
 
 export default MyCounter

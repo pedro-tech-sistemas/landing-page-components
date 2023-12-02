@@ -23,4 +23,6 @@ Default.args = {
   subtitle: 'O que você gostaria de gerenciar com a monday.com?',
   bgcolor: 'red',
   height: '100vh',
+  direction: 'row',
+  bannerUrl: 'https://th.bing.com/th/id/OIP._9BCnQIsggbjsJMyRGQ66wHaFY?rs=1&pid=ImgDetMain'
 }
