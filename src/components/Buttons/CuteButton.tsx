@@ -1,11 +1,29 @@
-import { ButtonBase } from "@mui/material";
+import { ButtonBase, ButtonBaseProps } from "@mui/material";
 
-export interface CuteButtonProps {
+export interface CuteButtonProps extends ButtonBaseProps {}
 
-}
-
-export default function CuteButton({}: CuteButtonProps) {
+export default function CuteButton({ children, ...restProps }: CuteButtonProps) {
   return (
-    <ButtonBase>Teste</ButtonBase>
+    <ButtonBase
+      {...restProps}
+      sx={{
+        py: 1,
+        px: 4,
+        borderRadius: '30px',
+        fontSize: '1.5rem',
+        color: '#fff',
+        textTransform: 'uppercase',
+        fontFamily: 'Denk One',
+        boxShadow: '0px 12px 9px -6px rgba(0,0,0,0.3)',
+        transition: 'transform 0.2s ease',
+        '&:hover': {
+          transform: 'translateY(2px)',
+          boxShadow: '0px 15px 12px -6px rgba(0,0,0,0.4)',
+        },
+        ...restProps.sx,
+      }}
+    >
+      {children}
+    </ButtonBase>
   );
 }

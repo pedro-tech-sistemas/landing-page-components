@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 
-import '../fonts';
+import '../fonts/@index';
 import { grey } from '@mui/material/colors';
 import { colors } from '../constants/colors';
 
@@ -14,24 +14,29 @@ export const theme = createTheme({
       color: grey[900],
     },
     h1: {
-      fontSize: '4.5rem',
+      fontSize: '72px',
       fontWeight: '600',
       lineHeight: '85px',
       wordBreak: 'break-word',
     },
     h2: {
-      fontSize: '3rem',
+      fontSize: '48px',
       fontWeight: '600',
       lineHeight: '40px',
       wordBreak: 'break-word',
     },
     h3: {
-      fontSize: '1.25rem',
+      fontSize: '32px',
       fontWeight: '600',
       lineHeight: 'auto',
     },
     h4: {
-      fontSize: '1rem',
+      fontSize: '24px',
+      fontWeight: '600',
+      lineHeight: 'auto',
+    },
+    h5: {
+      fontSize: '20px',
       fontWeight: '600',
       lineHeight: 'auto',
     }

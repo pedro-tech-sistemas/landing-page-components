@@ -11,10 +11,11 @@ const meta: Meta = {
 export default meta
 
 const Template: StoryFn<CuteButtonProps> = (args: CuteButtonProps) => (
-  <CuteButton
-    {...args}
-  />
+  <CuteButton {...args} />
 )
 
 export const Default = Template.bind({})
-Default.args = {}
+Default.args = {
+  children: 'Combos',
+  sx: { bgcolor: 'red' },
+}

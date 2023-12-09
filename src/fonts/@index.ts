@@ -7,3 +7,5 @@ import './Poppins-Medium.ttf';
 import './Poppins-Regular.ttf';
 import './Poppins-SemiBold.ttf';
 import './Poppins-Thin.ttf';
+
+// import './DenkOne-Regular.ttf';
