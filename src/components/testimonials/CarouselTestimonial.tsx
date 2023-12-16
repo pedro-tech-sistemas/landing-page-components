@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { Box, Button, MobileStepper, Paper, Stack, Typography } from "@mui/material";
-import { West, East, FormatQuote } from '@mui/icons-material';
+import { useState } from 'react'
+import { Box, Button, MobileStepper, Stack, Typography } from '@mui/material'
+import { West, East, FormatQuote } from '@mui/icons-material'
 
 export interface CarouselTestimonialProps {
-  testimonials: Testimonial[];
+  testimonials: Testimonial[]
 }
 
 const hoverStyle = {
@@ -11,27 +11,24 @@ const hoverStyle = {
     transform: 'scale(1.3)',
     transition: 'transform 0.2s ease-in-out',
   },
-};
+}
 
 // Needs to be done
-export default function CarouselTestimonial({
-  testimonials,
-}: CarouselTestimonialProps) {
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
+const CarouselTestimonial = ({ testimonials }: CarouselTestimonialProps) => {
+  const [activeTestimonial, setActiveTestimonial] = useState(0)
 
-  const maxSteps = testimonials.length;
-
+  const maxSteps = testimonials.length
 
   const handleNext = () => {
-    setActiveTestimonial((prevActiveTestimonial) => prevActiveTestimonial + 1);
-  };
+    setActiveTestimonial((prevActiveTestimonial) => prevActiveTestimonial + 1)
+  }
 
   const handleBack = () => {
-    setActiveTestimonial((prevActiveTestimonial) => prevActiveTestimonial - 1);
-  };
+    setActiveTestimonial((prevActiveTestimonial) => prevActiveTestimonial - 1)
+  }
 
   return (
-    <Stack alignItems="center">
+    <Stack alignItems='center'>
       <Box
         width={258}
         height={258}
@@ -43,9 +40,9 @@ export default function CarouselTestimonial({
         }}
       />
 
-      <Box position="relative" p={3} mt={2}>
+      <Box position='relative' p={3} mt={2}>
         <FormatQuote
-          color="primary"
+          color='primary'
           sx={{
             position: 'absolute',
             left: 0,
@@ -54,17 +51,12 @@ export default function CarouselTestimonial({
           }}
         />
 
-        <Typography
-          component="blockquote"
-          textAlign="center"
-          fontSize={20}
-          fontWeight={500}
-        >
+        <Typography component='blockquote' textAlign='center' fontSize={20} fontWeight={500}>
           {testimonials[activeTestimonial].testimonialText}
         </Typography>
 
         <FormatQuote
-          color="primary"
+          color='primary'
           sx={{
             position: 'absolute',
             right: 0,
@@ -75,13 +67,13 @@ export default function CarouselTestimonial({
       </Box>
 
       <MobileStepper
-        variant="text"
+        variant='text'
         steps={maxSteps}
-        position="static"
+        position='static'
         activeStep={activeTestimonial}
         nextButton={
           <Button
-            size="small"
+            size='small'
             onClick={handleNext}
             disabled={activeTestimonial === maxSteps - 1}
             sx={hoverStyle}
@@ -91,18 +83,20 @@ export default function CarouselTestimonial({
         }
         backButton={
           <Button
-            size="small"
+            size='small'
             onClick={handleBack}
             disabled={activeTestimonial === 0}
-            sx={hoverStyle}  
+            sx={hoverStyle}
           >
             <West />
           </Button>
         }
         sx={{
-          justifyContent: 'space-between'
+          justifyContent: 'space-between',
         }}
       />
     </Stack>
   )
 }
+
+export default CarouselTestimonial

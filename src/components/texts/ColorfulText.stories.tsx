@@ -1,8 +1,6 @@
-import React from 'react';
+import { Meta, StoryFn } from '@storybook/react'
 
-import { Meta, StoryFn } from '@storybook/react';
-
-import ColorfulText, { ColorfulTextProps } from './ColorfulText';
+import ColorfulText, { ColorfulTextProps } from './ColorfulText'
 
 const meta: Meta = {
   title: 'Components / texts / ColorfulText',
@@ -12,16 +10,12 @@ const meta: Meta = {
 export default meta
 
 const Template: StoryFn<ColorfulTextProps> = (args: ColorfulTextProps) => (
-  <ColorfulText {...args}>
-    Text here
-  </ColorfulText>
+  <ColorfulText {...args}>Text here</ColorfulText>
 )
 
 export const Default = Template.bind({})
 Default.args = {
-  colors: [
-    'red', 'blue', 'yellow', 'green'
-  ],
+  colors: ['red', 'blue', 'yellow', 'green'],
 }
 
 export const WithAnimation = Template.bind({})

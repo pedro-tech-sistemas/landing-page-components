@@ -1,19 +1,19 @@
-import { CSSProperties, ReactNode } from 'react';
+import { CSSProperties, ReactNode } from 'react'
 
-import { Box, Card, CardContent, CardHeader, Typography } from '@mui/material';
-import { grey } from '@mui/material/colors';
+import { Box, Card, CardContent, CardHeader, Typography } from '@mui/material'
+import { grey } from '@mui/material/colors'
 
 export interface FoodCardImageOverflowProps {
-  items: string[];
-  renderItems: ((items: string[]) => ReactNode)
-  title: string;
-  imgUrl: string;
-  extraInfo?: string;
-  bottomTextLabel?: string;
-  bottomTextColor?: CSSProperties['color'];
+  items: string[]
+  renderItems: (items: string[]) => ReactNode
+  title: string
+  imgUrl: string
+  extraInfo?: string
+  bottomTextLabel?: string
+  bottomTextColor?: CSSProperties['color']
 }
 
-export default function FoodCardImageOverflow({
+const FoodCardImageOverflow = ({
   renderItems,
   items,
   title,
@@ -21,28 +21,23 @@ export default function FoodCardImageOverflow({
   extraInfo,
   bottomTextLabel,
   bottomTextColor,
-}: FoodCardImageOverflowProps) {
-  const content = renderItems ? renderItems(items) : (
-    items.map((item) => (
-      <Typography
-        key={item}
-        color="text.secondary"
-        fontWeight={500}
-        textAlign="center"
-      >
-        {item}
-      </Typography>
-    ))
-  );
+}: FoodCardImageOverflowProps) => {
+  const content = renderItems
+    ? renderItems(items)
+    : items.map((item) => (
+        <Typography key={item} color='text.secondary' fontWeight={500} textAlign='center'>
+          {item}
+        </Typography>
+      ))
 
   return (
     <Box sx={{ position: 'relative', width: 'fit-content', display: 'inline-block' }}>
       <Box
         src={imgUrl}
-        component="img"
+        component='img'
         sx={{
           width: 258,
-          height: 258,    
+          height: 258,
           position: 'absolute',
           objectFit: 'cover',
           left: '50%',
@@ -78,12 +73,7 @@ export default function FoodCardImageOverflow({
           {content}
 
           {extraInfo && (
-            <Typography
-              mt={2}
-              fontWeight={700}
-              textTransform="uppercase"
-              textAlign="center"
-            >
+            <Typography mt={2} fontWeight={700} textTransform='uppercase' textAlign='center'>
               {extraInfo}
             </Typography>
           )}
@@ -105,11 +95,11 @@ export default function FoodCardImageOverflow({
             }}
           >
             <Typography
-              textAlign="center"
+              textAlign='center'
               fontWeight={700}
-              textTransform="uppercase"
+              textTransform='uppercase'
               color={grey[50]}
-              letterSpacing="1px"
+              letterSpacing='1px'
             >
               {bottomTextLabel}
             </Typography>
@@ -117,5 +107,7 @@ export default function FoodCardImageOverflow({
         )}
       </Card>
     </Box>
-  );
+  )
 }
+
+export default FoodCardImageOverflow

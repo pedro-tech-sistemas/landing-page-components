@@ -1,10 +1,8 @@
-import React from 'react';
+import { Meta, StoryFn } from '@storybook/react'
 
-import { Meta, StoryFn } from '@storybook/react';
-
-import ButtomNavigation, { ButtonNavigationProps } from './ButtomNavigation';
-import RestoreIcon from '@mui/icons-material/Restore';
-import FavoriteIcon from '@mui/icons-material/Favorite';
+import RestoreIcon from '@mui/icons-material/Restore'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import ButtomNavigation, { ButtonNavigationProps } from './ButtomNavigation'
 
 const meta: Meta = {
   title: 'Components / navigations / ButtomNavigation',
@@ -29,15 +27,5 @@ Default.args = {
       icon: <FavoriteIcon />,
     },
   ],
-  contentComponents: [
-    (
-      <p>1</p>
-    ),
-    (
-      <p>2</p>
-    ),
-    (
-      <p>3</p>
-    ),
-  ]
+  contentComponents: [<p key='1'>1</p>, <p key='2'>2</p>, <p key='3'>3</p>],
 }

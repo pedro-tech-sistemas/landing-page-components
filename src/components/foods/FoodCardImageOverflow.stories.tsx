@@ -1,8 +1,7 @@
-import React from 'react'
 import { Meta, StoryFn } from '@storybook/react'
 
-import FoodCardImageOverflow, { FoodCardImageOverflowProps } from './FoodCardImageOverflow'
 import { Box, Typography } from '@mui/material'
+import FoodCardImageOverflow, { FoodCardImageOverflowProps } from './FoodCardImageOverflow'
 
 const meta: Meta = {
   title: 'Components / foods / FoodCardImageOverflow',
@@ -46,10 +45,7 @@ WithCustomBodyList.args = {
   ...Default.args,
   renderItems: (items) => {
     return items.map((item) => (
-      <Typography
-        color="red"
-        textAlign="end"
-      >
+      <Typography color='red' textAlign='end' key={item}>
         {item}
       </Typography>
     ))

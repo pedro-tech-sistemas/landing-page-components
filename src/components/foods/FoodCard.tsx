@@ -1,17 +1,17 @@
-import { Box, Card, CardContent, CardMedia, Rating, Stack, Typography } from "@mui/material";
-import { grey } from "@mui/material/colors";
+import { Card, CardContent, CardMedia, Rating, Stack, Typography } from '@mui/material'
+import { grey } from '@mui/material/colors'
 
 export interface FoodCardProps {
-  imageUrl: string;
-  imageTitle: string;
-  name: string;
-  description: string;
-  price?: string;
-  stars?: string;
-  votes?: number;
+  imageUrl: string
+  imageTitle: string
+  name: string
+  description: string
+  price?: string
+  stars?: string
+  votes?: number
 }
 
-export default function FoodCard({
+const FoodCard = ({
   imageUrl,
   imageTitle,
   name,
@@ -19,8 +19,8 @@ export default function FoodCard({
   price,
   stars,
   votes,
-}: FoodCardProps) {
-  const hasCardRating = !!(stars && votes);
+}: FoodCardProps) => {
+  const hasCardRating = !!(stars && votes)
 
   return (
     <Card sx={{ maxWidth: 240, boxShadow: 'none' }}>
@@ -38,32 +38,24 @@ export default function FoodCard({
       >
         {hasCardRating && (
           <Stack
-            direction="row"
-            alignItems="center"
-            spacing={.5}
+            direction='row'
+            alignItems='center'
+            spacing={0.5}
             sx={{
               bgcolor: grey[50],
               paddingY: 0.5,
               paddingX: 2,
               width: 'fit-content',
-              borderRadius: '50px'
+              borderRadius: '50px',
             }}
           >
-            <Rating
-              name="votos"
-              value={1}
-              max={1}
-              size="medium"
-              readOnly
-            />
+            <Rating name='votos' value={1} max={1} size='medium' readOnly />
 
-            <Typography variant="h5" fontSize={14}>{stars}</Typography>
+            <Typography variant='h5' fontSize={14}>
+              {stars}
+            </Typography>
 
-            <Typography
-              fontSize={12}
-              color="text.secondary"
-              fontWeight={500}
-            >
+            <Typography fontSize={12} color='text.secondary' fontWeight={500}>
               ({votes})
             </Typography>
           </Stack>
@@ -71,28 +63,22 @@ export default function FoodCard({
       </CardMedia>
 
       <CardContent sx={{ background: grey[100] }}>
-        <Typography
-          gutterBottom
-          variant="h5"
-          component="div"
-        >
+        <Typography gutterBottom variant='h5' component='div'>
           {name}
         </Typography>
 
-        <Typography
-          variant="body2"
-          color="text.secondary"
-          fontWeight="500"
-        >
+        <Typography variant='body2' color='text.secondary' fontWeight='500'>
           {description}
         </Typography>
 
         {price && (
-          <Typography variant="h4" mt={2}>
+          <Typography variant='h4' mt={2}>
             R${price}
           </Typography>
         )}
       </CardContent>
     </Card>
-  );
+  )
 }
+
+export default FoodCard

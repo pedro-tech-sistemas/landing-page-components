@@ -1,17 +1,17 @@
-import { ReactNode } from 'react';
+import { ReactNode } from 'react'
 
-import { Stack } from '@mui/material';
+import { Stack } from '@mui/material'
 
 export interface ContentProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
-export default function Content({
-  children,
-}: ContentProps) {
+const Content = ({ children }: ContentProps) => {
   return (
-    <Stack alignItems="center" justifyContent="center">
+    <Stack alignItems='center' justifyContent='center'>
       {children}
     </Stack>
-  );
+  )
 }
+
+export default Content

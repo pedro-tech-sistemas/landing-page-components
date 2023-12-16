@@ -1,8 +1,7 @@
-import React from 'react';
-import { Meta, StoryFn } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react'
 
-import CTAButton, { CTAButtonProps } from './CTAButton';
-import EastIcon from '@mui/icons-material/East';
+import EastIcon from '@mui/icons-material/East'
+import CTAButton, { CTAButtonProps } from './CTAButton'
 
 const meta: Meta = {
   title: 'Components / buttons / CTAButton',
@@ -11,11 +10,7 @@ const meta: Meta = {
 
 export default meta
 
-const Template: StoryFn<CTAButtonProps> = (args: CTAButtonProps) => (
-  <CTAButton
-    {...args}
-  />
-)
+const Template: StoryFn<CTAButtonProps> = (args: CTAButtonProps) => <CTAButton {...args} />
 
 export const Default = Template.bind({})
 Default.args = {

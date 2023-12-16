@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { MyCounter } from 'landingpage-creator-components'
@@ -14,5 +15,5 @@ root.render(
       <h2>Counter with predefined value</h2>
       <MyCounter value={5} />
     </div>
-  </React.StrictMode>,
+  </React.StrictMode>
 )

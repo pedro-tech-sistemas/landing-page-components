@@ -1,8 +1,7 @@
-import React from 'react';
-import { Meta, StoryFn } from '@storybook/react';
-import { Box } from '@mui/material';
+import { Meta, StoryFn } from '@storybook/react'
+import { Box } from '@mui/material'
 
-import Header, { HeaderProps } from './Header';
+import Header, { HeaderProps } from './Header'
 
 const meta: Meta = {
   title: 'Components / Header',
@@ -15,17 +14,17 @@ const Template: StoryFn<HeaderProps> = (args: HeaderProps) => (
   <>
     <Header {...args} />
 
-    <Box height="200vh" />
+    <Box height='200vh' />
   </>
 )
 
 export const Default = Template.bind({})
 Default.args = {
   links: [
-    {label: 'Produtos', url: 'produtos'},
-    {label: 'Equipes', url: ''},
-    {label: 'Plataforma', url: ''},
-    {label: 'Recursos', url: ''},
+    { label: 'Produtos', url: 'produtos' },
+    { label: 'Equipes', url: '' },
+    { label: 'Plataforma', url: '' },
+    { label: 'Recursos', url: '' },
   ],
   ctaButtonAction: () => console.log('Function'),
   ctaButtonLabel: 'Whatsapp',

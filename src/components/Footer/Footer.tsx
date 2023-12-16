@@ -1,33 +1,26 @@
-import React, { CSSProperties, ReactNode } from 'react';
+import { ReactNode } from 'react'
 
-import { Facebook, Instagram, LinkedIn, Twitter } from '@mui/icons-material';
-import {
-  Link,
-  Stack,
-  StackProps,
-  SxProps,
-  Tooltip,
-  Typography,
-} from '@mui/material';
+import { Facebook, Instagram, LinkedIn, Twitter } from '@mui/icons-material'
+import { Link, Stack, StackProps, SxProps, Tooltip, Typography } from '@mui/material'
 
-type SocialMedia = 'facebook' | 'instagram' | 'linkedin' | 'twitter';
+type SocialMedia = 'facebook' | 'instagram' | 'linkedin' | 'twitter'
 
 export interface FooterProps extends StackProps {
-  copy: string;
+  copy: string
   links: {
-    labelText: string;
-    href: string;
-  }[];
+    labelText: string
+    href: string
+  }[]
   socialLinks?: {
-    icon: SocialMedia;
-    url: string;
-  }[];
-  otherLeftOptions?: ReactNode;
-  otherRightOptions?: ReactNode;
-  hasBorder?: boolean;
+    icon: SocialMedia
+    url: string
+  }[]
+  otherLeftOptions?: ReactNode
+  otherRightOptions?: ReactNode
+  hasBorder?: boolean
 }
 
-export default function Footer({
+const Footer = ({
   copy,
   links,
   socialLinks,
@@ -36,7 +29,7 @@ export default function Footer({
   padding = '48px',
   hasBorder = true,
   ...rest
-}: FooterProps) {
+}: FooterProps) => {
   const linkStyles: SxProps = {
     color: 'unset',
     textDecoration: 'none',
@@ -69,8 +62,8 @@ export default function Footer({
   return (
     <Stack
       p={padding}
-      justifyContent="space-between"
-      alignItems="center"
+      justifyContent='space-between'
+      alignItems='center'
       rowGap={2}
       sx={{
         borderTop: hasBorder ? '2px solid' : '',
@@ -78,35 +71,23 @@ export default function Footer({
         flexDirection: { xs: 'column', md: 'row' },
         bgcolor: 'primary.main',
         color: 'grey.100',
-        ...rest.sx
+        ...rest.sx,
       }}
       {...rest}
     >
-      <Stack
-        direction="row"
-        divider={<span>·</span>}
-        spacing={2}
-      >
+      <Stack direction='row' divider={<span>·</span>} spacing={2}>
         <Typography {...commonTypographyProps}>© {copy}</Typography>
 
-        {links?.map(({ labelText, href }, index) => (
-          <Link
-            key={`${labelText}-${index}`}
-            href={href}
-            sx={linkStyles}
-          >
-            <Typography
-              {...commonTypographyProps}
-            >
-              {labelText}
-            </Typography>
+        {links?.map(({ labelText, href }) => (
+          <Link key={`${labelText}-${labelText}`} href={href} sx={linkStyles}>
+            <Typography {...commonTypographyProps}>{labelText}</Typography>
           </Link>
         ))}
 
         {otherLeftOptions}
       </Stack>
 
-      <Stack direction="row" spacing={2}>
+      <Stack direction='row' spacing={2}>
         {otherRightOptions}
 
         {socialLinks?.map(({ icon, url }) => (
@@ -120,3 +101,5 @@ export default function Footer({
     </Stack>
   )
 }
+
+export default Footer

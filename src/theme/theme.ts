@@ -1,15 +1,12 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles'
 
-import '../fonts/@index';
-import { grey } from '@mui/material/colors';
-import { colors } from '../constants/colors';
+import '../fonts/@index'
+import { grey } from '@mui/material/colors'
+import colors from '../constants/colors'
 
-export const theme = createTheme({
+const theme = createTheme({
   typography: {
-    fontFamily: [
-      'Poppins',
-      'sans-serif'
-    ].join(','),
+    fontFamily: ['Poppins', 'sans-serif'].join(','),
     allVariants: {
       color: grey[900],
     },
@@ -39,15 +36,17 @@ export const theme = createTheme({
       fontSize: '20px',
       fontWeight: '600',
       lineHeight: 'auto',
-    }
+    },
   },
   palette: {
     primary: {
       main: colors.primary.main,
-      light: colors.primary.light
+      light: colors.primary.light,
     },
     secondary: {
       main: colors.secondary.main,
     },
   },
-});
+})
+
+export default theme
