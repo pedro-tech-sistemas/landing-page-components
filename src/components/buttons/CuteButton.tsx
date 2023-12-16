@@ -2,7 +2,7 @@ import { ButtonBase, ButtonBaseProps } from '@mui/material'
 
 export interface CuteButtonProps extends ButtonBaseProps {}
 
-const CuteButton = ({ children, ...restProps }: CuteButtonProps) => {
+const CuteButton = ({ children, sx, ...restProps }: CuteButtonProps) => {
   return (
     <ButtonBase
       {...restProps}
@@ -20,7 +20,7 @@ const CuteButton = ({ children, ...restProps }: CuteButtonProps) => {
           transform: 'translateY(2px)',
           boxShadow: '0px 15px 12px -6px rgba(0,0,0,0.4)',
         },
-        ...restProps.sx,
+        ...sx,
       }}
     >
       {children}

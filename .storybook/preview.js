@@ -1,6 +1,6 @@
 import React from 'react';
 import '../src/global.css';
-import { theme } from '../src/theme/theme';
+import theme from '../src/theme/theme';
 
 import { withThemeByClassName } from '@storybook/addon-styling'
 import { ThemeProvider } from '@mui/material';
