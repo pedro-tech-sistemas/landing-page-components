@@ -1,4 +1,3 @@
-import React from 'react'
 import { Meta, StoryFn } from '@storybook/react'
 
 import Footer, { FooterProps } from './Footer'
@@ -10,9 +9,7 @@ const meta: Meta = {
 
 export default meta
 
-const Template: StoryFn<FooterProps> = (args: FooterProps) => (
-  <Footer {...args} />
-)
+const Template: StoryFn<FooterProps> = (args: FooterProps) => <Footer {...args} />
 
 export const Default = Template.bind({})
 Default.args = {

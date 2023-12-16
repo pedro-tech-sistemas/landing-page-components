@@ -1,8 +1,8 @@
-import { ButtonBase, ButtonBaseProps } from "@mui/material";
+import { ButtonBase, ButtonBaseProps } from '@mui/material'
 
 export interface CuteButtonProps extends ButtonBaseProps {}
 
-export default function CuteButton({ children, ...restProps }: CuteButtonProps) {
+const CuteButton = ({ children, ...restProps }: CuteButtonProps) => {
   return (
     <ButtonBase
       {...restProps}
@@ -25,5 +25,7 @@ export default function CuteButton({ children, ...restProps }: CuteButtonProps) 
     >
       {children}
     </ButtonBase>
-  );
+  )
 }
+
+export default CuteButton

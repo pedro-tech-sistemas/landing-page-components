@@ -1,18 +1,20 @@
-import { ReactElement, useState } from 'react';
+import { ReactElement, useState } from 'react'
 
-import { BottomNavigation, BottomNavigationAction, BottomNavigationActionProps, Paper, PaperProps } from '@mui/material';
+import {
+  BottomNavigation,
+  BottomNavigationAction,
+  BottomNavigationActionProps,
+  Paper,
+  PaperProps,
+} from '@mui/material'
 
 export interface ButtonNavigationProps extends PaperProps {
-  contentComponents: ReactElement[];
-  buttons: BottomNavigationActionProps[];
+  contentComponents: ReactElement[]
+  buttons: BottomNavigationActionProps[]
 }
 
-export default function ButtonNavigation({
-  contentComponents,
-  buttons,
-  ...rest
-}: ButtonNavigationProps) {
-  const [value, setValue] = useState(0);
+const ButtonNavigation = ({ contentComponents, buttons, ...rest }: ButtonNavigationProps) => {
+  const [value, setValue] = useState(0)
 
   return (
     <Paper
@@ -27,22 +29,25 @@ export default function ButtonNavigation({
         showLabels
         value={value}
         onChange={(_, newValue) => {
-          setValue(newValue);
+          setValue(newValue)
         }}
       >
-        {buttons.map(({ label, icon, }) => (
+        {buttons.map(({ label, icon }) => (
           <BottomNavigationAction
+            key={label?.toString()}
             label={label}
             icon={icon}
             sx={{
               flexDirection: 'row',
               columnGap: 1,
-            }}  
+            }}
           />
         ))}
       </BottomNavigation>
 
       {contentComponents[value]}
     </Paper>
-  );
+  )
 }
+
+export default ButtonNavigation

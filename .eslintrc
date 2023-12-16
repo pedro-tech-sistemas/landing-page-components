@@ -1,12 +1,14 @@
 {
   "root": true,
   "extends": [
-    "prettier",
-    "plugin:prettier/recommended",
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:prettier/recommended",
   ],
   "parser": "@typescript-eslint/parser",
   "plugins": [
@@ -22,10 +24,22 @@
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "react/react-in-jsx-scope": "off",
+    "import/extensions": "off",
+    "react/jsx-filename-extension": [0, { "extensions": [".jsx", ".tsx"] }],
+    "react/require-default-props": "off",
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.stories.tsx", "**/*.stories.js"]}],
+    "react/function-component-definition": [
+      "error",
+      { "namedComponents": "arrow-function" }
+    ],
+    "react/jsx-props-no-spreading": "off"
   },
   "settings": {
     "react": {
       "version": "detect"
+    },
+    "import/resolver": {
+      "typescript": {}
     }
   },
   "env": {

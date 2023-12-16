@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactElement, ReactNode } from 'react';
+import React, { CSSProperties, ReactElement, ReactNode } from 'react'
 
 import {
   AppBar,
@@ -9,53 +9,52 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
-  useScrollTrigger
-} from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
+  useScrollTrigger,
+} from '@mui/material'
+import MenuIcon from '@mui/icons-material/Menu'
+import CloseIcon from '@mui/icons-material/Close'
 
-import CTAButton from '../buttons/CTAButton';
+import CTAButton from '../buttons/CTAButton'
 
 export interface HeaderProps {
-  logo?: string;
+  logo?: string
   links: {
-    label: string;
-    url: string;
-  }[];
-  textColor?: CSSProperties['color'];
-  ctaButtonLabel?: string;
-  ctaButtonAction?: () => void;
-  ctaButtonIcon: ReactNode;
+    label: string
+    url: string
+  }[]
+  textColor?: CSSProperties['color']
+  ctaButtonLabel?: string
+  ctaButtonAction?: () => void
+  ctaButtonIcon: ReactNode
 }
-
 
 function ElevationScroll({ children }: { children: ReactElement }) {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0,
-    target: window ? window : undefined,
-  });
+    target: window || undefined,
+  })
 
   return React.cloneElement(children, {
     elevation: trigger ? 4 : 0,
-  });
+  })
 }
 
-export default function Header({
+const Header = ({
   logo,
   links,
   textColor,
   ctaButtonAction,
   ctaButtonLabel,
   ctaButtonIcon,
-}: HeaderProps) {
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+}: HeaderProps) => {
+  const [mobileOpen, setMobileOpen] = React.useState(false)
 
   const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
-  };
+    setMobileOpen((prevState) => !prevState)
+  }
 
-  const container = window !== undefined ? () => window.document.body : undefined;
+  const container = window !== undefined ? () => window.document.body : undefined
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
@@ -64,7 +63,7 @@ export default function Header({
       </IconButton>
 
       <Box mt={2}>
-        <img src={logo} />
+        <img src={logo} alt='logo' />
       </Box>
 
       <List>
@@ -77,14 +76,13 @@ export default function Header({
         ))}
       </List>
     </Box>
-  );
+  )
 
   return (
     <>
-    
       <ElevationScroll>
         <AppBar
-          color="inherit"
+          color='inherit'
           sx={{
             flexDirection: 'row',
             alignItems: 'center',
@@ -93,9 +91,7 @@ export default function Header({
             px: 1,
           }}
         >
-          {logo && (
-            <img src={logo} />
-          )}
+          {logo && <img src={logo} alt='logo' />}
 
           <List
             sx={{
@@ -103,18 +99,17 @@ export default function Header({
             }}
           >
             {links.map((link) => (
-              <ListItem
-                key={link.label}
-                disablePadding
-                sx={{ width: 'auto' }}
-              >
+              <ListItem key={link.label} disablePadding sx={{ width: 'auto' }}>
                 <ListItemButton href={link.url} sx={{ textAlign: 'center' }}>
-                  <ListItemText primary={link.label} primaryTypographyProps={{ color: textColor }} />
+                  <ListItemText
+                    primary={link.label}
+                    primaryTypographyProps={{ color: textColor }}
+                  />
                 </ListItemButton>
               </ListItem>
             ))}
 
-            {(ctaButtonAction && ctaButtonLabel) && (
+            {ctaButtonAction && ctaButtonLabel && (
               <CTAButton
                 sx={{ p: '8px 24px', ml: 1, maxWidth: 'fit-content' }}
                 onClick={ctaButtonAction}
@@ -127,19 +122,19 @@ export default function Header({
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
+              size='large'
+              aria-label='account of current user'
+              aria-controls='menu-appbar'
+              aria-haspopup='true'
               onClick={handleDrawerToggle}
-              color="inherit"
+              color='inherit'
             >
               <MenuIcon />
             </IconButton>
 
             <Drawer
               container={container}
-              variant="temporary"
+              variant='temporary'
               open={mobileOpen}
               onClose={handleDrawerToggle}
               ModalProps={{
@@ -156,7 +151,9 @@ export default function Header({
         </AppBar>
       </ElevationScroll>
 
-      <Box id="Spacing" width="100%" height="80px" />
+      <Box id='Spacing' width='100%' height='80px' />
     </>
   )
 }
+
+export default Header

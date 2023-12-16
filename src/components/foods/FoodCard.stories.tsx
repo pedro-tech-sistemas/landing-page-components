@@ -1,4 +1,3 @@
-import React from 'react'
 import { Meta, StoryFn } from '@storybook/react'
 
 import FoodCard, { FoodCardProps } from './FoodCard'
@@ -10,9 +9,7 @@ const meta: Meta = {
 
 export default meta
 
-const Template: StoryFn<FoodCardProps> = (args: FoodCardProps) => (
-  <FoodCard {...args} />
-)
+const Template: StoryFn<FoodCardProps> = (args: FoodCardProps) => <FoodCard {...args} />
 
 export const Default = Template.bind({})
 Default.args = {

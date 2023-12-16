@@ -1,21 +1,20 @@
-import { CSSProperties } from 'react';
+import { CSSProperties } from 'react'
 
-import { Typography, TypographyProps } from '@mui/material';
-import { keyframes } from '@emotion/react';
+import { Typography, TypographyProps } from '@mui/material'
+import { keyframes } from '@emotion/react'
 
 export interface ColorfulTextProps extends TypographyProps {
-  hasAnimation?: boolean;
-  colors: CSSProperties['color'][];
+  hasAnimation?: boolean
+  colors: CSSProperties['color'][]
 }
 
-export default function ColorfulText({
+const ColorfulText = ({
   hasAnimation = false,
   colors,
   children,
   sx,
   ...restProps
-}: ColorfulTextProps) {
-
+}: ColorfulTextProps) => {
   const gradient = keyframes`
     0% {
       background-position: 0% 50%;
@@ -26,7 +25,7 @@ export default function ColorfulText({
     100% {
       background-position: 0% 50%;
     }
-  `;
+  `
 
   return (
     <Typography
@@ -48,3 +47,5 @@ export default function ColorfulText({
     </Typography>
   )
 }
+
+export default ColorfulText

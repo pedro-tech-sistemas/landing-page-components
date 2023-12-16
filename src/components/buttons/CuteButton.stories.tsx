@@ -1,7 +1,6 @@
-import React from 'react';
-import { Meta, StoryFn } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react'
 
-import CuteButton, { CuteButtonProps } from './CuteButton';
+import CuteButton, { CuteButtonProps } from './CuteButton'
 
 const meta: Meta = {
   title: 'Components / buttons / CuteButton',
@@ -10,9 +9,7 @@ const meta: Meta = {
 
 export default meta
 
-const Template: StoryFn<CuteButtonProps> = (args: CuteButtonProps) => (
-  <CuteButton {...args} />
-)
+const Template: StoryFn<CuteButtonProps> = (args: CuteButtonProps) => <CuteButton {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
