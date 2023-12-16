@@ -14,7 +14,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
-import CTAButton from '../Buttons/CTAButton';
+import CTAButton from '../buttons/CTAButton';
 
 export interface HeaderProps {
   logo?: string;

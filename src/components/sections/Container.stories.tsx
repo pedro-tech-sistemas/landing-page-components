@@ -1,17 +1,17 @@
 import React from 'react'
 import { Meta, StoryFn } from '@storybook/react'
 
-import Section, { SectionProps } from './Section'
+import Container, { ContainerProps } from './Container'
 
 const meta: Meta = {
-  title: 'Components / Section',
-  component: Section,
+  title: 'Components / sections / Container',
+  component: Container,
 }
 
 export default meta
 
-const Template: StoryFn<SectionProps> = (args: SectionProps) => (
-  <Section {...args} />
+const Template: StoryFn<ContainerProps> = (args: ContainerProps) => (
+  <Container {...args} />
 )
 
 export const Default = Template.bind({})

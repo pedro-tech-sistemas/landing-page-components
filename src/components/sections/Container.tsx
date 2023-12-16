@@ -1,8 +1,8 @@
 import React, { CSSProperties, ReactNode } from 'react';
 
-import { Box, Container, Divider, Stack } from '@mui/material';
+import { Box, Container as MUIContainer, Divider, Stack } from '@mui/material';
 
-export interface SectionProps {
+export interface ContainerProps {
   height?: CSSProperties['height'];
   hasBorderTop?: boolean;
   hasBorderBottom?: boolean;
@@ -10,13 +10,13 @@ export interface SectionProps {
   children: ReactNode;
 }
 
-export default function Section({
+export default function Container({
   height = '100vh',
   hasBorderTop,
   hasBorderBottom,
   imgUrl,
   children,
-}: SectionProps) {
+}: ContainerProps) {
   return (
     <Stack rowGap={4}>
       {hasBorderTop && (
@@ -33,11 +33,11 @@ export default function Section({
           backgroundRepeat: 'no-repeat',
         }}
       >
-        <Container maxWidth="lg">
+        <MUIContainer maxWidth="lg">
           <Stack rowGap={4}>
             {children}
           </Stack>
-        </Container>
+        </MUIContainer>
       </Box>
 
       {hasBorderBottom && (

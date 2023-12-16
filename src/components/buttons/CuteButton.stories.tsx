@@ -4,7 +4,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import CuteButton, { CuteButtonProps } from './CuteButton';
 
 const meta: Meta = {
-  title: 'Components / Buttons / CuteButton',
+  title: 'Components / buttons / CuteButton',
   component: CuteButton,
 }
 

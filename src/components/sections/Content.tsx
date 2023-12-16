@@ -2,13 +2,13 @@ import { ReactNode } from 'react';
 
 import { Stack } from '@mui/material';
 
-export interface SectionContentProps {
+export interface ContentProps {
   children: ReactNode;
 }
 
-export default function SectionContent({
+export default function Content({
   children,
-}: SectionContentProps) {
+}: ContentProps) {
   return (
     <Stack alignItems="center" justifyContent="center">
       {children}

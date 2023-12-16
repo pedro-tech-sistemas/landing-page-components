@@ -1,18 +1,18 @@
 import React from 'react'
 import { Meta, StoryFn } from '@storybook/react'
 
-import SectionContent, { SectionContentProps } from './SectionContent'
+import Content, { ContentProps } from './Content'
 import { Stack } from '@mui/material'
 
 const meta: Meta = {
-  title: 'Components / SectionContent',
-  component: SectionContent,
+  title: 'Components / sections / Content',
+  component: Content,
 }
 
 export default meta
 
-const Template: StoryFn<SectionContentProps> = (args: SectionContentProps) => (
-  <SectionContent {...args} />
+const Template: StoryFn<ContentProps> = (args: ContentProps) => (
+  <Content {...args} />
 )
 
 export const Default = Template.bind({})

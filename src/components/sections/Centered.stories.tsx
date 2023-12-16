@@ -1,17 +1,17 @@
 import React from 'react'
 import { Meta, StoryFn } from '@storybook/react'
 
-import CenteredSection, { CenteredSectionProps } from './CenteredSection'
+import Centered, { CenteredProps } from './Centered'
 
 const meta: Meta = {
-  title: 'Components / CenteredSection',
-  component: CenteredSection,
+  title: 'Components / sections / Centered',
+  component: Centered,
 }
 
 export default meta
 
-const Template: StoryFn<CenteredSectionProps> = (args: CenteredSectionProps) => (
-  <CenteredSection
+const Template: StoryFn<CenteredProps> = (args: CenteredProps) => (
+  <Centered
     {...args}
   />
 )

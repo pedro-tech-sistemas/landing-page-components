@@ -1,16 +1,16 @@
 import React, { ReactNode } from 'react';
 import { Stack, StackProps } from '@mui/material';
 
-export interface CenteredSectionProps extends StackProps {
+export interface CenteredProps extends StackProps {
   align: 'row-start' | 'row-center' | 'row-end' | 'column-start' | 'column-center' | 'column-end';
   children: ReactNode;
 }
 
-export default function CenteredSection({
+export default function Centered({
   align = 'column-center',
   children,
   ...restProps
-}: CenteredSectionProps) {
+}: CenteredProps) {
   const isColumn = align.startsWith('column');
   const isCenter = align.endsWith('center');
   const isEnd = align.endsWith('end');

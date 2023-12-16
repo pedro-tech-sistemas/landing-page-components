@@ -5,7 +5,7 @@ import CTAButton, { CTAButtonProps } from './CTAButton';
 import EastIcon from '@mui/icons-material/East';
 
 const meta: Meta = {
-  title: 'Components / CTAButton',
+  title: 'Components / buttons / CTAButton',
   component: CTAButton,
 }
 
