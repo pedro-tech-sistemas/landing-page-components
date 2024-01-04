@@ -65,6 +65,7 @@ const FoodCardImageOverflow = ({
             fontWeight: 700,
             textTransform: 'uppercase',
             color: 'text.secondary',
+            fontFamily: 'Denk One',
           }}
           sx={{ marginTop: '42px' }}
         />
