@@ -1,18 +1,18 @@
 import { Meta, StoryFn } from '@storybook/react'
 import { Box } from '@mui/material'
 
-import Header, { HeaderProps } from './Header'
+import CommonHeader, { CommonHeaderProps } from './CommonHeader'
 
 const meta: Meta = {
-  title: 'Components / Header',
-  component: Header,
+  title: 'Components / headers / CommonHeader',
+  component: CommonHeader,
 }
 
 export default meta
 
-const Template: StoryFn<HeaderProps> = (args: HeaderProps) => (
+const Template: StoryFn<CommonHeaderProps> = (args: CommonHeaderProps) => (
   <>
-    <Header {...args} />
+    <CommonHeader {...args} />
 
     <Box height='200vh' />
   </>

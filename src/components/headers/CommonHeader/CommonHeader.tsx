@@ -14,10 +14,9 @@ import {
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
+import CTAButton from 'src/components/buttons/CTAButton/CTAButton'
 
-import CTAButton from '../buttons/CTAButton/CTAButton'
-
-export interface HeaderProps {
+export interface CommonHeaderProps {
   logo?: string
   links: {
     label: string
@@ -41,14 +40,14 @@ function ElevationScroll({ children }: { children: ReactElement }) {
   })
 }
 
-const Header = ({
+const CommonHeader = ({
   logo,
   links,
   textColor,
   ctaButtonAction,
   ctaButtonLabel,
   ctaButtonIcon,
-}: HeaderProps) => {
+}: CommonHeaderProps) => {
   const [mobileOpen, setMobileOpen] = React.useState(false)
 
   const handleDrawerToggle = () => {
@@ -139,7 +138,7 @@ const Header = ({
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
               <IconButton
                 size='large'
-                aria-label='account of current user'
+                // aria-label='account of current user'
                 aria-controls='menu-appbar'
                 aria-haspopup='true'
                 onClick={handleDrawerToggle}
@@ -173,4 +172,4 @@ const Header = ({
   )
 }
 
-export default Header
+export default CommonHeader

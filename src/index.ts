@@ -1,2 +1,3 @@
-// eslint-disable-next-line import/prefer-default-export
-export { default as MyCounter } from './components/App'
+export { default as myCustomTheme } from './theme/theme'
+export * from './components/buttons'
+export * from './components/carousels'

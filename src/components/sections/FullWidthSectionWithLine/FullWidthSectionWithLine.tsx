@@ -15,7 +15,7 @@ const FullWidthSectionWithLine = ({
   ...restProps
 }: FullWidthSectionWithLineProps) => {
   return (
-    <Box width='100vw' bgcolor={bgcolor} {...restProps}>
+    <Box width='100%' bgcolor={bgcolor} {...restProps}>
       <Divider
         textAlign='left'
         sx={{

@@ -5,7 +5,7 @@ import { grey } from '@mui/material/colors'
 
 export interface FoodCardImageOverflowProps {
   items: string[]
-  renderItems: (items: string[]) => ReactNode
+  renderItems?: (items: string[]) => ReactNode
   title: string
   imgUrl: string
   extraInfo?: string
@@ -31,19 +31,17 @@ const FoodCardImageOverflow = ({
       ))
 
   return (
-    <Box sx={{ position: 'relative', width: 'fit-content', display: 'inline-block' }}>
+    <Box width='fit-content'>
       <Box
         src={imgUrl}
         component='img'
         sx={{
-          width: 258,
-          height: 258,
-          position: 'absolute',
+          width: '100%',
+          maxWidth: 320,
+          height: 'auto',
           objectFit: 'cover',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          zIndex: 999,
-          borderRadius: '30px',
+          borderTopLeftRadius: '24px',
+          borderTopRightRadius: '24px',
         }}
       />
 
@@ -53,21 +51,25 @@ const FoodCardImageOverflow = ({
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          mt: '210px',
           boxShadow: '0 4px 8px 0 rgba(0, 0, 0, .2)',
-          borderRadius: '15px',
+          borderRadius: 0,
+          borderBottomLeftRadius: '24px',
+          borderBottomRightRadius: '24px',
+          marginTop: '-6px',
         }}
       >
         <CardHeader
           title={title}
           titleTypographyProps={{
-            fontSize: 32,
+            sx: {
+              fontSize: { xs: 32, md: 32 },
+            },
             fontWeight: 700,
             textTransform: 'uppercase',
+            textAlign: 'center',
             color: 'text.secondary',
             fontFamily: 'Denk One',
           }}
-          sx={{ marginTop: '42px' }}
         />
 
         <CardContent>
@@ -79,34 +81,30 @@ const FoodCardImageOverflow = ({
             </Typography>
           )}
         </CardContent>
-
-        {bottomTextLabel && (
-          <Box
-            sx={{
-              position: 'absolute',
-              bottom: -34,
-              bgcolor: bottomTextColor || 'primary.main',
-              width: '70%',
-              height: '28px',
-              borderBottomLeftRadius: '30px',
-              borderBottomRightRadius: '30px',
-              borderColor: grey[800],
-              borderTopStyle: 'dashed',
-              borderWidth: '3px',
-            }}
-          >
-            <Typography
-              textAlign='center'
-              fontWeight={700}
-              textTransform='uppercase'
-              color={grey[50]}
-              letterSpacing='1px'
-            >
-              {bottomTextLabel}
-            </Typography>
-          </Box>
-        )}
       </Card>
+
+      {bottomTextLabel && (
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            bgcolor: bottomTextColor || 'primary.main',
+            width: '70%',
+            height: '28px',
+            borderBottomLeftRadius: '30px',
+            borderBottomRightRadius: '30px',
+            borderColor: grey[800],
+            borderTopStyle: 'dashed',
+            borderWidth: '3px',
+            margin: '0 auto',
+          }}
+        >
+          <Typography variant='caption' fontWeight={700} textTransform='uppercase' color={grey[50]}>
+            {bottomTextLabel}
+          </Typography>
+        </Box>
+      )}
     </Box>
   )
 }

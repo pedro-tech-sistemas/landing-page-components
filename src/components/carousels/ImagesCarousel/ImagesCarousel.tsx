@@ -1,7 +1,7 @@
 import { CSSProperties } from 'react'
 
 import { Box } from '@mui/material'
-import Carousel from './Carousel'
+import Carousel from '../Carousel'
 
 export interface ImagesCarouselProps {
   images: string[]

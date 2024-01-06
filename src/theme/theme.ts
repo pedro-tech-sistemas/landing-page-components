@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material/styles'
 
-import '../fonts/@index'
+// import '../fonts/@index'
 import { grey } from '@mui/material/colors'
 import colors from '../constants/colors'
 
@@ -67,6 +67,15 @@ theme = createTheme(theme, {
       },
       [theme.breakpoints.down('sm')]: {
         fontSize: '16px',
+      },
+    },
+  },
+  components: {
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          fontFamily: 'Poppins',
+        },
       },
     },
   },

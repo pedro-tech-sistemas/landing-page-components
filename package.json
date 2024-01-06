@@ -13,6 +13,7 @@
     "access": "public"
   },
   "scripts": {
+    "create-component": "node createComponent.js",
     "build": "npm run build:esm && npm run build:cjs",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
@@ -72,6 +73,8 @@
     "@mui/icons-material": "^5.14.8",
     "@mui/material": "^5.14.8",
     "@types/styled-components": "^5.1.26",
-    "styled-components": "^6.0.3"
+    "@vitejs/plugin-react": "^4.2.1",
+    "styled-components": "^6.0.3",
+    "vite": "^5.0.11"
   }
 }

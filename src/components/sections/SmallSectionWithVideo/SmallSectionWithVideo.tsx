@@ -1,15 +1,20 @@
 import { Box, Stack } from '@mui/material'
-import { ReactNode } from 'react'
+import { CSSProperties, ReactNode } from 'react'
 
 export interface SmallSectionWithVideoProps {
   videoSrc: string
+  height?: CSSProperties['height']
   children: ReactNode
 }
 
-const SmallSectionWithVideo = ({ videoSrc, children }: SmallSectionWithVideoProps) => {
+const SmallSectionWithVideo = ({
+  videoSrc,
+  height = '50vh',
+  children,
+}: SmallSectionWithVideoProps) => {
   return (
     <Stack
-      height='50vh'
+      height={height}
       alignItems='center'
       justifyContent='center'
       sx={{
