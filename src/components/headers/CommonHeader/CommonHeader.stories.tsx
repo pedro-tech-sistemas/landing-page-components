@@ -29,3 +29,33 @@ Default.args = {
   ctaButtonAction: () => console.log('Function'),
   ctaButtonLabel: 'Whatsapp',
 }
+
+export const Logo = Template.bind({})
+Logo.args = {
+  ...Default.args,
+  logo: 'https://media.istockphoto.com/id/1473300198/pt/foto/infinity-road-isolated-on-the-white-background.jpg?s=1024x1024&w=is&k=20&c=X-8962AwBZaG0HBwvlfCer4FBOxB3yNQ-bBVtjt8vMQ=',
+}
+
+export const DifferentTextColor = Template.bind({})
+DifferentTextColor.args = {
+  ...Default.args,
+  textColor: '#fff',
+}
+
+export const HideOnScroll = Template.bind({})
+HideOnScroll.args = {
+  ...Default.args,
+  hideOnScrollDown: true,
+}
+
+export const Gradient = Template.bind({})
+Gradient.args = {
+  ...Default.args,
+  hasGradientBackground: true,
+}
+
+export const HideOnScrollAndGradient = Template.bind({})
+HideOnScrollAndGradient.args = {
+  ...HideOnScroll.args,
+  ...Gradient.args,
+}
