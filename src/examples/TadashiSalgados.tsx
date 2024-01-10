@@ -7,7 +7,6 @@ import ScrollToSectionButton from 'src/components/buttons/ScrollToSectionButton/
 import Header from '../components/headers/CommonHeader/CommonHeader'
 import ImagesCarousel from '../components/carousels/ImagesCarousel/ImagesCarousel'
 import ScrollToTopButton from '../components/navigations/ScrollToTopButton/ScrollToTopButton'
-// import SmallSectionWithVideo from '../components/sections/SmallSectionWithVideo'
 import videoSrc from './images/carol-coxinhas-ex.mp4'
 import Section from '../components/sections/Section/Section'
 import SmallSectionWithVideo from '../components/sections/SmallSectionWithVideo/SmallSectionWithVideo'

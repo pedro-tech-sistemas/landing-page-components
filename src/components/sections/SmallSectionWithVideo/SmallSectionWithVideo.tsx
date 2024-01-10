@@ -52,7 +52,9 @@ const SmallSectionWithVideo = ({
         }}
       />
 
-      <Box p={2} sx={{ position: 'relative', zIndez: 1 }}>{children}</Box>
+      <Box p={2} sx={{ position: 'relative', zIndez: 1 }}>
+        {children}
+      </Box>
     </Stack>
   )
 }
