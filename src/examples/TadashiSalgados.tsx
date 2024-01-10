@@ -12,7 +12,7 @@ import videoSrc from './images/carol-coxinhas-ex.mp4'
 import Section from '../components/sections/Section/Section'
 import SmallSectionWithVideo from '../components/sections/SmallSectionWithVideo/SmallSectionWithVideo'
 import FullWidthSectionWithLine from '../components/sections/FullWidthSectionWithLine/FullWidthSectionWithLine'
-import FoodCardImageOverflow from '../components/foods/FoodCardImageOverflow'
+import FoodCardImageOverflow from '../components/foods/FoodCardImageOverflow/FoodCardImageOverflow'
 import RotatingText from '../components/texts/RotatingText/RotatingText'
 
 const TadashiSalgados = () => {

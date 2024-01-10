@@ -5,7 +5,7 @@ import { Link, Stack, StackProps, SxProps, Tooltip, Typography } from '@mui/mate
 
 type SocialMedia = 'facebook' | 'instagram' | 'linkedin' | 'twitter'
 
-export interface FooterProps extends StackProps {
+export interface BasicFooterProps extends StackProps {
   copy: string
   links: {
     labelText: string
@@ -20,7 +20,7 @@ export interface FooterProps extends StackProps {
   hasBorder?: boolean
 }
 
-const Footer = ({
+const BasicFooter = ({
   copy,
   links,
   socialLinks,
@@ -29,7 +29,7 @@ const Footer = ({
   padding = '48px',
   hasBorder = true,
   ...rest
-}: FooterProps) => {
+}: BasicFooterProps) => {
   const linkStyles: SxProps = {
     color: 'unset',
     textDecoration: 'none',
@@ -102,4 +102,4 @@ const Footer = ({
   )
 }
 
-export default Footer
+export default BasicFooter

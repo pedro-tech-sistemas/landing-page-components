@@ -1,15 +1,15 @@
 import { Meta, StoryFn } from '@storybook/react'
 
-import Footer, { FooterProps } from './Footer'
+import Footer, { BasicFooterProps } from './BasicFooter'
 
 const meta: Meta = {
-  title: 'Components / Footer',
+  title: 'Components / footers / BasicFooter',
   component: Footer,
 }
 
 export default meta
 
-const Template: StoryFn<FooterProps> = (args: FooterProps) => <Footer {...args} />
+const Template: StoryFn<BasicFooterProps> = (args: BasicFooterProps) => <Footer {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
