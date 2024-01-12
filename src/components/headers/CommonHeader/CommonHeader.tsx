@@ -146,13 +146,13 @@ const CommonHeader = ({
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size='large'
-              // aria-label='account of current user'
               aria-controls='menu-appbar'
               aria-haspopup='true'
               onClick={handleDrawerToggle}
               color='inherit'
+              aria-label='Ver menu'
             >
-              <MenuIcon />
+              <MenuIcon color='secondary' />
             </IconButton>
 
             <Drawer

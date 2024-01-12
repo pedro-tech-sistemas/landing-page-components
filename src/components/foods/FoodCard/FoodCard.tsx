@@ -62,7 +62,7 @@ const FoodCard = ({
         )}
       </CardMedia>
 
-      <CardContent sx={{ background: grey[100] }}>
+      <CardContent sx={{ background: grey[100], height: '100%' }}>
         <Typography gutterBottom variant='h5' component='div'>
           {name}
         </Typography>

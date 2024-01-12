@@ -4,6 +4,7 @@ import EastIcon from '@mui/icons-material/East'
 import { Box, Button, Grid, Stack, Typography } from '@mui/material'
 import SimpleSingularTestimonialCard from 'src/components/testimonials/SimpleSingularTestimonialCard/SimpleSingularTestimonialCard'
 import ScrollToSectionButton from 'src/components/buttons/ScrollToSectionButton/ScrollToSectionButton'
+import FoodCard from 'src/components/foods/FoodCard/FoodCard'
 import Header from '../components/headers/CommonHeader/CommonHeader'
 import ImagesCarousel from '../components/carousels/ImagesCarousel/ImagesCarousel'
 import ScrollToTopButton from '../components/navigations/ScrollToTopButton/ScrollToTopButton'
@@ -28,6 +29,7 @@ const TadashiSalgados = () => {
           { label: 'Cardápio', url: '/' },
           { label: 'Contato', url: '/' },
         ]}
+        hideOnScrollDown
         textColor={grey[50]}
         ctaButtonLabel='Whatsapp'
         ctaButtonAction={() => console.log('Whatsapp')}
@@ -36,9 +38,9 @@ const TadashiSalgados = () => {
 
       <ImagesCarousel
         images={[
-          'https://th.bing.com/th/id/OIP.qcipbdOzxf0F3akbK2FR8QHaJQ?rs=1&pid=ImgDetMain',
-          'https://th.bing.com/th/id/OIP.E0rzIGDVu9-89YdysuUXBAHaHa?pid=ImgDet&w=474&h=474&rs=1',
-          'https://th.bing.com/th/id/OIP.IG63nhP1qokWCJJMcpxwnQHaJQ?pid=ImgDet&w=474&h=592&rs=1',
+          'https://media.istockphoto.com/id/1164397436/pt/foto/plate-with-coxinhas-a-typical-croquette-of-brazil.jpg?s=612x612&w=is&k=20&c=TukJDdAYRNjfcKD0l0AOBqbn4jjKNNnx_mFkSOhJ7bM=',
+          'https://media.istockphoto.com/id/1424050486/pt/foto/coxinha-de-frango-1.jpg?s=1024x1024&w=is&k=20&c=PD1ga8geQi1EaHJR5uBgPST6ZiSdlMPlIQyuQ1XLWmw=',
+          'https://media.istockphoto.com/id/1126232098/pt/foto/appetizers-called-teque%C3%B1os-made-of-fried-corn-filled-with-cheese.jpg?s=1024x1024&w=is&k=20&c=BTmOGG_Ti9X7f7bj87U_HTp8GD3wyKWiu60wlxHw4fE=',
         ]}
       />
 
@@ -49,7 +51,7 @@ const TadashiSalgados = () => {
           justifyContent='space-between'
           rowGap={4}
         >
-          <Box display='grid' rowGap={1} sx={{ width: { xs: '100%', md: '50% ' } }}>
+          <Box display='grid' rowGap={2} sx={{ width: { xs: '100%', md: '50% ' } }}>
             <Typography variant='h2' color='primary.main'>
               O MELHOR <RotatingText variant='h2' words={['SALGADO', 'BOLO', 'DE TUDO']} /> DA
               REGIÃO!
@@ -88,6 +90,32 @@ const TadashiSalgados = () => {
         </Stack>
       </Section>
 
+      <Section py={8} bgcolor='#312601'>
+        <Typography variant='h3' color='secondary' textAlign='center'>
+          Últimos Lançamentos
+        </Typography>
+
+        <Typography variant='subtitle1' color={grey[50]} textAlign='center'>
+          Confira os produtos lançados recentemente
+        </Typography>
+
+        <Stack direction='row' justifyContent='center' spacing={4} mt={3}>
+          <FoodCard
+            name='Bauru'
+            description='Delicioso queijo mussarela com um presunto de alta qualidade.'
+            imageTitle=''
+            imageUrl='https://media.istockphoto.com/id/1300351234/pt/foto/brazilian-snack-chicken-coxinha.jpg?s=612x612&w=is&k=20&c=KxO7AeIE7unhprXRqYZm5801Bsw-wUnz2tPMb1MYRR0='
+          />
+
+          <FoodCard
+            name='Kibe recheado de catupiry'
+            description='Deliciosa massa de kibe tradicional recheado com o melhor do catupiry.'
+            imageTitle=''
+            imageUrl='https://media.istockphoto.com/id/1300351412/pt/foto/kibe-roast-brazilian-snack.jpg?s=612x612&w=is&k=20&c=_fAFeVG0dqKUyeql3gjZ2r1M3cQPYPRogdR_pmH6qh0='
+          />
+        </Stack>
+      </Section>
+
       <SmallSectionWithVideo height='60vh' videoSrc={videoSrc}>
         <Stack alignItems='center' spacing={3}>
           <Typography variant='h3' textAlign='center' color='white'>
@@ -105,7 +133,7 @@ const TadashiSalgados = () => {
       </SmallSectionWithVideo>
 
       <Section py={8}>
-        <Typography variant='h2' mb={4}>
+        <Typography variant='h3' mb={4}>
           Nossas avaliações
         </Typography>
 
