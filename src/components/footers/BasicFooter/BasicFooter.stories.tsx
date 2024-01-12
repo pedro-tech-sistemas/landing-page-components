@@ -1,5 +1,6 @@
 import { Meta, StoryFn } from '@storybook/react'
 
+import { Typography } from '@mui/material'
 import Footer, { BasicFooterProps } from './BasicFooter'
 
 const meta: Meta = {
@@ -36,4 +37,28 @@ Default.args = {
       url: '',
     },
   ],
+}
+
+export const WithoutBorderTop = Template.bind({})
+WithoutBorderTop.args = {
+  ...Default.args,
+  hasBorder: false,
+}
+
+export const WithoutSocialMedias = Template.bind({})
+WithoutSocialMedias.args = {
+  ...Default.args,
+  socialLinks: undefined,
+}
+
+export const WithOtherLeftOptions = Template.bind({})
+WithOtherLeftOptions.args = {
+  ...Default.args,
+  otherLeftOptions: <Typography>This is my custom left option</Typography>,
+}
+
+export const WithOtherRightOptions = Template.bind({})
+WithOtherRightOptions.args = {
+  ...Default.args,
+  otherRightOptions: <Typography>This is my custom right option</Typography>,
 }

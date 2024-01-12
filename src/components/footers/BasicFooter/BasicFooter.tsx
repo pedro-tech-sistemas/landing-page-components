@@ -39,7 +39,7 @@ const BasicFooter = ({
   }
 
   const commonTypographyProps = {
-    fontWeight: 'light',
+    fontWeight: 400,
     fontSize: '1rem',
     color: 'grey.100',
   }
