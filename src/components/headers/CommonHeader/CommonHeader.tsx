@@ -63,10 +63,6 @@ const CommonHeader = ({
         <CloseIcon />
       </IconButton>
 
-      <Box mt={2}>
-        <img src={logo} alt='logo' style={{ height: 'auto', width: '180px' }} />
-      </Box>
-
       <List>
         {links.map((link) => (
           <ListItem key={link.label} disablePadding>
@@ -133,7 +129,7 @@ const CommonHeader = ({
 
             {ctaButtonAction && ctaButtonLabel && (
               <CTAButton
-                sx={{ p: '8px 24px', ml: 1, maxWidth: 'fit-content' }}
+                sx={{ fontWeight: 600, p: '8px 24px', ml: 1, maxWidth: 'fit-content' }}
                 onClick={ctaButtonAction}
                 endIcon={ctaButtonIcon}
                 color='secondary'

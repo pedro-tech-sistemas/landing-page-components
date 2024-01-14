@@ -1,6 +1,6 @@
 import { Box, BoxProps, Container } from '@mui/material'
 
-export interface SectionProps extends BoxProps {}
+export type SectionProps = BoxProps
 
 const Section = ({ children, ...restProps }: SectionProps) => (
   <Box {...restProps}>

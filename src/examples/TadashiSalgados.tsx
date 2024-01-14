@@ -5,6 +5,8 @@ import { Box, Button, Grid, Stack, Typography } from '@mui/material'
 import SimpleSingularTestimonialCard from 'src/components/testimonials/SimpleSingularTestimonialCard/SimpleSingularTestimonialCard'
 import ScrollToSectionButton from 'src/components/buttons/ScrollToSectionButton/ScrollToSectionButton'
 import FoodCard from 'src/components/foods/FoodCard/FoodCard'
+import GoogleLocalization from 'src/localization/GoogleLocalization/GoogleLocalization'
+import FooterWithLogo from 'src/components/footers/FooterWithLogo/FooterWithLogo'
 import Header from '../components/headers/CommonHeader/CommonHeader'
 import ImagesCarousel from '../components/carousels/ImagesCarousel/ImagesCarousel'
 import ScrollToTopButton from '../components/navigations/ScrollToTopButton/ScrollToTopButton'
@@ -16,14 +18,12 @@ import FoodCardImageOverflow from '../components/foods/FoodCardImageOverflow/Foo
 import RotatingText from '../components/texts/RotatingText/RotatingText'
 
 const TadashiSalgados = () => {
-  const totalItems = 4
-
   return (
     <Box>
       <ScrollToTopButton />
 
       <Header
-        logo='https://th.bing.com/th/id/OIP.Xu3uhsAOutc9qQ_TVh4IkwHaHa?pid=ImgDet&w=474&h=474&rs=1'
+        logo='https://th.bing.com/th/id/OIP.i1FtORNJy2Jz1Q5_d4L2-AAAAA?rs=1&pid=ImgDetMain'
         links={[
           { label: 'Sobre', url: '/' },
           { label: 'Cardápio', url: '/' },
@@ -58,12 +58,17 @@ const TadashiSalgados = () => {
             </Typography>
 
             <Typography>
-              Tadashi Salgados é uma das maiores redes de franquias de salgados do Brasil. Surgiu em
-              Minas Gerais e vem conquistando todo o país! O sucesso se deve a qualidade de seus
-              produtos e ao perfil jovem, entusiasmado, criativo e inovador da empresa. Tanto
-              reconhecimento trouxe o título de “A Coxinha Mais Amada do Brasil” e hoje, o número de
-              fãs da marca (Coxifans) cresce diariamente, graças à variedade de sabores da
-              organização.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Fringilla ut morbi tincidunt augue. Nibh
+              nisl condimentum id venenatis a. Eget nunc lobortis mattis aliquam. Risus quis varius
+              quam quisque. Massa tincidunt dui ut ornare lectus sit amet. Nunc sed blandit libero
+              volutpat sed. Nec ullamcorper sit amet risus nullam eget felis eget. Pellentesque
+              pulvinar pellentesque habitant morbi tristique senectus et netus. Ornare suspendisse
+              sed nisi lacus sed viverra. Ultrices vitae auctor eu augue ut lectus. Tellus rutrum
+              tellus pellentesque eu. Pellentesque habitant morbi tristique senectus et. Aliquam
+              nulla facilisi cras fermentum odio eu feugiat pretium nibh. Eu scelerisque felis
+              imperdiet proin fermentum leo vel. Egestas maecenas pharetra convallis posuere morbi
+              leo. Velit sed ullamcorper morbi tincidunt ornare massa.
             </Typography>
 
             <ScrollToSectionButton id='#menu'>Ver o cardápio</ScrollToSectionButton>
@@ -84,6 +89,7 @@ const TadashiSalgados = () => {
                 height: '100%',
                 objectFit: 'cover',
                 objectPosition: 'center',
+                background: 'transparent',
               }}
             />
           </Box>
@@ -113,6 +119,13 @@ const TadashiSalgados = () => {
             imageTitle=''
             imageUrl='https://media.istockphoto.com/id/1300351412/pt/foto/kibe-roast-brazilian-snack.jpg?s=612x612&w=is&k=20&c=_fAFeVG0dqKUyeql3gjZ2r1M3cQPYPRogdR_pmH6qh0='
           />
+
+          <FoodCard
+            name='Kibe recheado de catupiry'
+            description='Deliciosa massa de kibe tradicional recheado com o melhor do catupiry.'
+            imageTitle=''
+            imageUrl='https://media.istockphoto.com/id/1300351412/pt/foto/kibe-roast-brazilian-snack.jpg?s=612x612&w=is&k=20&c=_fAFeVG0dqKUyeql3gjZ2r1M3cQPYPRogdR_pmH6qh0='
+          />
         </Stack>
       </Section>
 
@@ -132,22 +145,60 @@ const TadashiSalgados = () => {
         </Stack>
       </SmallSectionWithVideo>
 
-      <Section py={8}>
-        <Typography variant='h3' mb={4}>
+      <Section
+        py={8}
+        position='relative'
+        sx={{
+          '&::before': {
+            position: 'absolute',
+            content: "''",
+            width: '400px',
+            height: '400px',
+            backgroundColor: 'secondary.main',
+            borderRadius: '100%',
+            zIndex: -1,
+            top: '50%',
+            left: '-20%',
+            transform: 'translateY(-50%)',
+          },
+        }}
+      >
+        <Typography variant='h3' mb={2}>
           Nossas avaliações
         </Typography>
 
-        <Grid container spacing={2} rowGap={4}>
-          {Array.from({ length: totalItems }).map(() => (
-            // eslint-disable-next-line react/jsx-key
-            <Grid item xs={12} sm={6}>
-              <SimpleSingularTestimonialCard
-                text='Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.'
-                name='Steven Marcetti'
-                rating={5}
-              />
-            </Grid>
-          ))}
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={6}>
+            <SimpleSingularTestimonialCard
+              text='Os salgados são muito bons, sequinhos e de grande qualidade. Atendentes são simpáticos e educados. Recomendo a todos.'
+              name='Marcelo CTS'
+              imageUrl='https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            />
+          </Grid>
+
+          <Grid item xs={12} sm={6}>
+            <SimpleSingularTestimonialCard
+              text='O melhor salgado que já provei!! Excelente qualidade.'
+              name='Sheila Figueira'
+              imageUrl='https://images.unsplash.com/photo-1612000529646-f424a2aa1bff?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            />
+          </Grid>
+
+          <Grid item xs={12} sm={6}>
+            <SimpleSingularTestimonialCard
+              text='Só tenho elogios! Podem comprar que vale muito a pena; peguei kit festas; salgadinhos secos e muuuuito saborosos, docinhos e bolos INCRÍVEIS. Super recomendo, é só pego com eles!'
+              name='Camilo Cruz'
+              imageUrl='https://images.unsplash.com/photo-1582152629442-4a864303fb96?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            />
+          </Grid>
+
+          <Grid item xs={12} sm={6}>
+            <SimpleSingularTestimonialCard
+              text='Os salgados tem um tamanho bom, são muito saborosos, muito bem feitos, crocantes, sequinhos e o preço é otimo'
+              name='Gustavo Piccin'
+              imageUrl='https://images.unsplash.com/photo-1603112579965-e24332cc453a?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            />
+          </Grid>
         </Grid>
       </Section>
 
@@ -163,20 +214,39 @@ const TadashiSalgados = () => {
           <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
             {Array.from({ length: 8 }).map((_, index) => (
               <Grid item xs={4} md={4} lg={4} key={index}>
-                <Box display='flex' justifyContent='center'>
-                  <FoodCardImageOverflow
-                    imgUrl='https://media.istockphoto.com/id/1164397436/pt/foto/plate-with-coxinhas-a-typical-croquette-of-brazil.jpg?s=612x612&w=0&k=20&c=RMyUF1iQsTayrupjUgGe4HvUJKVoHSiJyIXHh4kGvaQ='
-                    items={['Sabor Incomparável']}
-                    title='Coxinha de Frango'
-                    extraInfo='28G'
-                    bottomTextLabel='Mais vendido'
-                  />
-                </Box>
+                <FoodCardImageOverflow
+                  imgUrl='https://media.istockphoto.com/id/1164397436/pt/foto/plate-with-coxinhas-a-typical-croquette-of-brazil.jpg?s=612x612&w=0&k=20&c=RMyUF1iQsTayrupjUgGe4HvUJKVoHSiJyIXHh4kGvaQ='
+                  items={['Sabor Incomparável']}
+                  title='Coxinha de Frango'
+                  extraInfo='28G'
+                  bottomTextLabel='Mais vendido'
+                />
               </Grid>
             ))}
           </Grid>
         </Section>
       </FullWidthSectionWithLine>
+
+      <GoogleLocalization
+        src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3681.094164131254!2d-46.98775392505921!3d-22.687538279410003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8e97ad2d99a49%3A0x7aec869e1f477187!2sTadashi%20Salgados!5e0!3m2!1spt-BR!2sbr!4v1705164731646!5m2!1spt-BR!2sbr'
+        height='500px'
+      />
+
+      <FooterWithLogo
+        logoSrc='https://i.pinimg.com/originals/fe/8f/ad/fe8fadd178bda6ea8a33bfa7a3ad4b8a.png'
+        centerText='O melhor salgado da região'
+        copy='2023 Tadashi Salgados. Todos os direitos reservados'
+        socialLinks={[
+          {
+            icon: 'facebook',
+            url: '',
+          },
+          {
+            icon: 'instagram',
+            url: '',
+          },
+        ]}
+      />
     </Box>
   )
 }

@@ -2,12 +2,11 @@ import { ReactNode } from 'react'
 
 import { Facebook, Instagram, LinkedIn, Twitter } from '@mui/icons-material'
 import { Link, Stack, StackProps, SxProps, Tooltip, Typography } from '@mui/material'
-
-type SocialMedia = 'facebook' | 'instagram' | 'linkedin' | 'twitter'
+import { SocialMedia } from 'src/@types/SocialMedia'
 
 export interface BasicFooterProps extends StackProps {
   copy: string
-  links: {
+  links?: {
     labelText: string
     href: string
   }[]
@@ -61,6 +60,7 @@ const BasicFooter = ({
 
   return (
     <Stack
+      component='footer'
       p={padding}
       justifyContent='space-between'
       alignItems='center'

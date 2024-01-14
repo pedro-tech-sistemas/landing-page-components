@@ -10,12 +10,21 @@ export interface SimpleSingularTestimonialCardProps extends CardProps {
 const SimpleSingularTestimonialCard = ({
   text,
   name,
-  rating,
+  rating = 5,
   imageUrl,
 }: SimpleSingularTestimonialCardProps) => {
   return (
-    <Card>
-      <CardContent sx={{ pt: 3 }}>
+    <Card sx={{ height: '100%' }}>
+      <CardContent
+        sx={{
+          boxSizing: 'border-box',
+          pt: 3,
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+        }}
+      >
         <Typography fontWeight={500} color='text.secondary' component='blockquote'>
           {text}
         </Typography>

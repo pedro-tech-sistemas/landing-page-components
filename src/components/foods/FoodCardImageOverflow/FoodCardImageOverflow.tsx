@@ -31,13 +31,12 @@ const FoodCardImageOverflow = ({
       ))
 
   return (
-    <Box width='fit-content'>
+    <Box width='100%'>
       <Box
         src={imgUrl}
         component='img'
         sx={{
           width: '100%',
-          maxWidth: 320,
           height: 'auto',
           objectFit: 'cover',
           borderTopLeftRadius: '24px',
@@ -47,7 +46,7 @@ const FoodCardImageOverflow = ({
 
       <Card
         sx={{
-          maxWidth: 320,
+          maxWidth: '100%',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
