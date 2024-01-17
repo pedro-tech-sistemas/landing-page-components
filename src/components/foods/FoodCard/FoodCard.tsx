@@ -23,7 +23,7 @@ const FoodCard = ({
   const hasCardRating = !!(stars && votes)
 
   return (
-    <Card sx={{ maxWidth: 240, boxShadow: 'none' }}>
+    <Card sx={{ width: '100%', minWidth: 120, boxShadow: 'none', height: '100%' }}>
       <CardMedia
         sx={{
           height: 180,

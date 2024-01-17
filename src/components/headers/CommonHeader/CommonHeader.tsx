@@ -57,13 +57,16 @@ const CommonHeader = ({
 
   const shouldHide = useHideOnScroll(hideOnScrollDown)
 
+  /*
+    This will be rendered on mobile version once the menu is opened
+  */
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <IconButton sx={{ position: 'absolute', right: '12px', top: '12px' }}>
         <CloseIcon />
       </IconButton>
 
-      <List>
+      <List sx={{ mt: 6 }}>
         {links.map((link) => (
           <ListItem key={link.label} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
@@ -72,6 +75,8 @@ const CommonHeader = ({
           </ListItem>
         ))}
       </List>
+
+      <img src={logo} alt='Logo' width='80px' height='auto' style={{ marginTop: '16px' }} />
     </Box>
   )
 

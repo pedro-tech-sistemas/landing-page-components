@@ -1,12 +1,11 @@
-/* eslint-disable react/no-array-index-key */
 import { grey, orange } from '@mui/material/colors'
 import EastIcon from '@mui/icons-material/East'
 import { Box, Button, Grid, Stack, Typography } from '@mui/material'
 import SimpleSingularTestimonialCard from 'src/components/testimonials/SimpleSingularTestimonialCard/SimpleSingularTestimonialCard'
-import ScrollToSectionButton from 'src/components/buttons/ScrollToSectionButton/ScrollToSectionButton'
 import FoodCard from 'src/components/foods/FoodCard/FoodCard'
 import GoogleLocalization from 'src/localization/GoogleLocalization/GoogleLocalization'
 import FooterWithLogo from 'src/components/footers/FooterWithLogo/FooterWithLogo'
+import FullWidthWithImage from 'src/components/sections/FullWidthWithImage/FullWidthWithImage'
 import Header from '../components/headers/CommonHeader/CommonHeader'
 import ImagesCarousel from '../components/carousels/ImagesCarousel/ImagesCarousel'
 import ScrollToTopButton from '../components/navigations/ScrollToTopButton/ScrollToTopButton'
@@ -15,7 +14,6 @@ import Section from '../components/sections/Section/Section'
 import SmallSectionWithVideo from '../components/sections/SmallSectionWithVideo/SmallSectionWithVideo'
 import FullWidthSectionWithLine from '../components/sections/FullWidthSectionWithLine/FullWidthSectionWithLine'
 import FoodCardImageOverflow from '../components/foods/FoodCardImageOverflow/FoodCardImageOverflow'
-import RotatingText from '../components/texts/RotatingText/RotatingText'
 
 const TadashiSalgados = () => {
   return (
@@ -44,89 +42,79 @@ const TadashiSalgados = () => {
         ]}
       />
 
-      <Section py={8}>
-        <Stack
-          sx={{ flexDirection: { xs: 'column', md: 'row' } }}
-          alignItems='center'
-          justifyContent='space-between'
-          rowGap={4}
-        >
-          <Box display='grid' rowGap={2} sx={{ width: { xs: '100%', md: '50% ' } }}>
-            <Typography variant='h2' color='primary.main'>
-              O MELHOR <RotatingText variant='h2' words={['SALGADO', 'BOLO', 'DE TUDO']} /> DA
-              REGIÃO!
-            </Typography>
+      <FullWidthWithImage
+        bgcolor='secondary.main'
+        imageUrl='https://th.bing.com/th/id/R.61e82649496666cc5ff5c6cdc433cd9a?rik=wf%2bVOIQ6zZiyXg&riu=http%3a%2f%2fportuguese.beverageproductionline.com%2fphoto%2fbeverageproductionline%2feditor%2f20180215141537_91175.jpg&ehk=MCN%2fPxFHDZRnqN0iEZlxh3vD5sFy23RObi7vt7Pwecs%3d&risl=&pid=ImgRaw&r=0'
+      >
+        <Stack height='100%' justifyContent='center' spacing={4}>
+          <Typography variant='h3' color='primary.main'>
+            Empresa
+          </Typography>
 
-            <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Fringilla ut morbi tincidunt augue. Nibh
-              nisl condimentum id venenatis a. Eget nunc lobortis mattis aliquam. Risus quis varius
-              quam quisque. Massa tincidunt dui ut ornare lectus sit amet. Nunc sed blandit libero
-              volutpat sed. Nec ullamcorper sit amet risus nullam eget felis eget. Pellentesque
-              pulvinar pellentesque habitant morbi tristique senectus et netus. Ornare suspendisse
-              sed nisi lacus sed viverra. Ultrices vitae auctor eu augue ut lectus. Tellus rutrum
-              tellus pellentesque eu. Pellentesque habitant morbi tristique senectus et. Aliquam
-              nulla facilisi cras fermentum odio eu feugiat pretium nibh. Eu scelerisque felis
-              imperdiet proin fermentum leo vel. Egestas maecenas pharetra convallis posuere morbi
-              leo. Velit sed ullamcorper morbi tincidunt ornare massa.
-            </Typography>
-
-            <ScrollToSectionButton id='#menu'>Ver o cardápio</ScrollToSectionButton>
-          </Box>
-
-          <Box
-            sx={{
-              width: { xs: '100%', md: '300px' },
-              height: { xs: '100%', md: '300px' },
-              overflow: 'hidden',
-            }}
-          >
-            <img
-              alt='random'
-              src='https://th.bing.com/th/id/OIP.E0rzIGDVu9-89YdysuUXBAHaHa?rs=1&pid=ImgDetMain'
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                objectPosition: 'center',
-                background: 'transparent',
-              }}
-            />
-          </Box>
+          <Typography fontWeight='500'>
+            Tadashi Salgados tem 4 anos de história na fabricação de salgados, e possui distribuição
+            em quase todos os estados do país, atendendo à demanda de grandes redes de redes de fast
+            food. A empresa elabora mais de 100 tipos de salgados, entre pães de queijo, croissants
+            e pães de batata, além de uma extensa linha de produtos que dispensam as fases
+            descongelamento e fermentação. O diferencial está na alta qualidade dos produtos,
+            elaborados a partir de matérias-primas rigorosamente selecionadas. Seu processo de
+            produção conta com uma equipe técnica composta por nutricionistas e engenheiros de
+            alimentos, garantindo qualidade e segurança alimentar aos produtos. O sucesso da UAI
+            Salgados é resultado da relação de confiança com os distribuidores, clientes e
+            consumidores, que propiciam histórias de crescimento mútuo. Em constante busca por
+            aprimoramento, seus valores estão consolidados em inovação, qualidade, honestidade,
+            transparência e humanização em um ambiente participativo.
+          </Typography>
         </Stack>
-      </Section>
+      </FullWidthWithImage>
 
       <Section py={8} bgcolor='#312601'>
-        <Typography variant='h3' color='secondary' textAlign='center'>
+        <Typography
+          variant='h3'
+          color='#312601'
+          textAlign='center'
+          width='fit-content'
+          px={4}
+          py={1}
+          borderRadius={1}
+          margin='0 auto'
+          sx={{ backgroundColor: 'secondary.main' }}
+        >
           Últimos Lançamentos
         </Typography>
 
-        <Typography variant='subtitle1' color={grey[50]} textAlign='center'>
+        <Typography variant='subtitle2' mt={1} color={grey[50]} textAlign='center'>
           Confira os produtos lançados recentemente
         </Typography>
 
-        <Stack direction='row' justifyContent='center' spacing={4} mt={3}>
-          <FoodCard
-            name='Bauru'
-            description='Delicioso queijo mussarela com um presunto de alta qualidade.'
-            imageTitle=''
-            imageUrl='https://media.istockphoto.com/id/1300351234/pt/foto/brazilian-snack-chicken-coxinha.jpg?s=612x612&w=is&k=20&c=KxO7AeIE7unhprXRqYZm5801Bsw-wUnz2tPMb1MYRR0='
-          />
+        <Grid container justifyContent='center' spacing={4} mt={3}>
+          <Grid item xs={12} sm={6} md={4}>
+            <FoodCard
+              name='Bauru'
+              description='Delicioso queijo mussarela com um presunto de alta qualidade.'
+              imageTitle=''
+              imageUrl='https://media.istockphoto.com/id/1300351234/pt/foto/brazilian-snack-chicken-coxinha.jpg?s=612x612&w=is&k=20&c=KxO7AeIE7unhprXRqYZm5801Bsw-wUnz2tPMb1MYRR0='
+            />
+          </Grid>
 
-          <FoodCard
-            name='Kibe recheado de catupiry'
-            description='Deliciosa massa de kibe tradicional recheado com o melhor do catupiry.'
-            imageTitle=''
-            imageUrl='https://media.istockphoto.com/id/1300351412/pt/foto/kibe-roast-brazilian-snack.jpg?s=612x612&w=is&k=20&c=_fAFeVG0dqKUyeql3gjZ2r1M3cQPYPRogdR_pmH6qh0='
-          />
+          <Grid item xs={12} sm={6} md={4}>
+            <FoodCard
+              name='Kibe recheado de catupiry'
+              description='Deliciosa massa de kibe tradicional recheado com o melhor do catupiry.'
+              imageTitle=''
+              imageUrl='https://media.istockphoto.com/id/1300351412/pt/foto/kibe-roast-brazilian-snack.jpg?s=612x612&w=is&k=20&c=_fAFeVG0dqKUyeql3gjZ2r1M3cQPYPRogdR_pmH6qh0='
+            />
+          </Grid>
 
-          <FoodCard
-            name='Kibe recheado de catupiry'
-            description='Deliciosa massa de kibe tradicional recheado com o melhor do catupiry.'
-            imageTitle=''
-            imageUrl='https://media.istockphoto.com/id/1300351412/pt/foto/kibe-roast-brazilian-snack.jpg?s=612x612&w=is&k=20&c=_fAFeVG0dqKUyeql3gjZ2r1M3cQPYPRogdR_pmH6qh0='
-          />
-        </Stack>
+          <Grid item xs={12} sm={6} md={4}>
+            <FoodCard
+              name='Kibe recheado de catupiry'
+              description='Deliciosa massa de kibe tradicional recheado com o melhor do catupiry.'
+              imageTitle=''
+              imageUrl='https://media.istockphoto.com/id/1300351412/pt/foto/kibe-roast-brazilian-snack.jpg?s=612x612&w=is&k=20&c=_fAFeVG0dqKUyeql3gjZ2r1M3cQPYPRogdR_pmH6qh0='
+            />
+          </Grid>
+        </Grid>
       </Section>
 
       <SmallSectionWithVideo height='60vh' videoSrc={videoSrc}>
@@ -213,6 +201,7 @@ const TadashiSalgados = () => {
         <Section mt={4}>
           <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
             {Array.from({ length: 8 }).map((_, index) => (
+              // eslint-disable-next-line react/no-array-index-key
               <Grid item xs={4} md={4} lg={4} key={index}>
                 <FoodCardImageOverflow
                   imgUrl='https://media.istockphoto.com/id/1164397436/pt/foto/plate-with-coxinhas-a-typical-croquette-of-brazil.jpg?s=612x612&w=0&k=20&c=RMyUF1iQsTayrupjUgGe4HvUJKVoHSiJyIXHh4kGvaQ='
