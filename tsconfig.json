@@ -1,5 +1,5 @@
 {
-  "include": ["src", "@types"],
+  "include": ["src"],
   "exclude": [
     "dist",
     "node_modules"
@@ -10,8 +10,10 @@
     "target": "es2016",
     "importHelpers": true,
     "declaration": true,
+    "declarationMap": true,
     "sourceMap": true,
     "rootDir": "./src",
+    "outDir": "./dist",
     "strict": true,
     "noImplicitReturns": true,
     "baseUrl": ".",
