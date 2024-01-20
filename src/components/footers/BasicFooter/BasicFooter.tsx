@@ -72,6 +72,7 @@ const BasicFooter = ({
         bgcolor: 'primary.main',
         color: 'grey.100',
         ...rest.sx,
+        width: '100%',
       }}
       {...rest}
     >

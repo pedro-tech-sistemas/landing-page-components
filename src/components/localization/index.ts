@@ -1,1 +1,2 @@
-export * from './GoogleLocalization/GoogleLocalization'
+// eslint-disable-next-line import/prefer-default-export
+export { default as GoogleLocalization } from './GoogleLocalization/GoogleLocalization'

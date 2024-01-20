@@ -1,2 +1,2 @@
-export * from './ColorfulText/ColorfulText'
-export * from './RotatingText/RotatingText'
+export { default as ColorfulText } from './ColorfulText/ColorfulText'
+export { default as RotatingText } from './RotatingText/RotatingText'

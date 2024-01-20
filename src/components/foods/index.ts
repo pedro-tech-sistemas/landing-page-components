@@ -1,2 +1,2 @@
-export * from './FoodCard/FoodCard'
-export * from './FoodCardImageOverflow/FoodCardImageOverflow'
+export { default as FoodCard } from './FoodCard/FoodCard'
+export { default as FoodCardImageOverflow } from './FoodCardImageOverflow/FoodCardImageOverflow'

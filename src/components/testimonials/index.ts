@@ -1,4 +1,4 @@
-export * from './CarouselTestimonial/CarouselTestimonial'
-export * from './SimpleSingularTestimonial/SimpleSingularTestimonial'
-export * from './SimpleSingularTestimonialCard/SimpleSingularTestimonialCard'
-export * from './SimpleSingularTestimonialWithRating/SimpleSingularTestimonialWithRating'
+export { default as CarouselTestimonial } from './CarouselTestimonial/CarouselTestimonial'
+export { default as SimpleSingularTestimonial } from './SimpleSingularTestimonial/SimpleSingularTestimonial'
+export { default as SimpleSingularTestimonialCard } from './SimpleSingularTestimonialCard/SimpleSingularTestimonialCard'
+export { default as SimpleSingularTestimonialWithRating } from './SimpleSingularTestimonialWithRating/SimpleSingularTestimonialWithRating'

@@ -1,2 +1,2 @@
-export * from './BasicFooter/BasicFooter'
-export * from './FooterWithLogo/FooterWithLogo'
+export { default as BasicFooter } from './BasicFooter/BasicFooter'
+export { default as FooterWithLogo } from './FooterWithLogo/FooterWithLogo'
