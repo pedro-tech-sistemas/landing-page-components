@@ -1,12 +1,14 @@
 {
   "name": "landingpage-creator-components",
-  "version": "2.1.3-alpha.3",
+  "version": "2.1.3-alpha.4",
   "description": "Basic components library to create a great Landing Page",
   "author": "Pedro Silva (pedrobarbosasw)",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["/dist"],
+  "files": [
+    "/dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pedro-tech-sistemas/landing-page-components.git"
@@ -29,6 +31,11 @@
     "landing-page"
   ],
   "peerDependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.8",
+    "@mui/material": "^5.14.8",
+    "@mui/system": "^5.15.5",
     "react": ">=16"
   },
   "devDependencies": {
@@ -61,10 +68,6 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.14.8",
-    "@mui/material": "^5.14.8",
     "@vitejs/plugin-react": "^4.2.1",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "vite": "^5.0.11",

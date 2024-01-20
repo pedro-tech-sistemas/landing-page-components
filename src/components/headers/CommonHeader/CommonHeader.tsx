@@ -10,12 +10,12 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
-  useTheme,
 } from '@mui/material'
+import { useTheme } from '@mui/material/styles'
 import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
-import CTAButton from 'src/components/buttons/CTAButton/CTAButton'
-import useHideOnScroll from 'src/hooks/useHideOnScroll'
+import CTAButton from '../../buttons/CTAButton/CTAButton'
+import useHideOnScroll from '../../../hooks/useHideOnScroll'
 
 export interface CommonHeaderProps {
   logo?: string
