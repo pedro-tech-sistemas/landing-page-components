@@ -1,13 +1,14 @@
-import { createTheme } from '@mui/material/styles'
+import { Theme, createTheme } from '@mui/material/styles'
 
 import { grey } from '@mui/material/colors'
 import createBreakpoints from '@mui/system/createTheme/createBreakpoints'
+import { deepmerge } from '@mui/utils'
 import colors from '../constants/colors'
 
-export default function getMyCustomTheme() {
+export default function getMyCustomTheme(customTheme: Theme) {
   const breakpoints = createBreakpoints({})
 
-  return createTheme({
+  const defaultTheme = createTheme({
     typography: {
       fontFamily: ['Poppins', 'sans-serif'].join(','),
       allVariants: {
@@ -89,4 +90,6 @@ export default function getMyCustomTheme() {
       },
     },
   })
+
+  return createTheme(deepmerge(defaultTheme, customTheme))
 }
