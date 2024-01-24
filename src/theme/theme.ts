@@ -10,7 +10,7 @@ export default function getMyCustomTheme(customTheme: Theme) {
 
   const defaultTheme = createTheme({
     typography: {
-      fontFamily: ['Poppins', 'sans-serif'].join(','),
+      fontFamily: ['unset'].join(','),
       allVariants: {
         color: grey[900],
       },
@@ -68,15 +68,6 @@ export default function getMyCustomTheme(customTheme: Theme) {
         },
         [breakpoints.down('sm')]: {
           fontSize: '16px',
-        },
-      },
-    },
-    components: {
-      MuiTypography: {
-        styleOverrides: {
-          root: {
-            fontFamily: 'Poppins',
-          },
         },
       },
     },
