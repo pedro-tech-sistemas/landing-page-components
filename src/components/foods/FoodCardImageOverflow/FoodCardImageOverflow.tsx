@@ -1,13 +1,14 @@
 import { CSSProperties, ReactNode } from 'react'
 
-import { Box, Card, CardContent, CardHeader, Typography } from '@mui/material'
+import { Box, Card, CardContent, CardHeader, CardMedia, Typography } from '@mui/material'
 import { grey } from '@mui/material/colors'
 
 export interface FoodCardImageOverflowProps {
   items: string[]
   renderItems?: (items: string[]) => ReactNode
   title: string
-  imgUrl: string
+  imageUrl: string
+  imageTitle?: string
   extraInfo?: string
   bottomTextLabel?: string
   bottomTextColor?: CSSProperties['color']
@@ -17,7 +18,8 @@ const FoodCardImageOverflow = ({
   renderItems,
   items,
   title,
-  imgUrl,
+  imageUrl,
+  imageTitle,
   extraInfo,
   bottomTextLabel,
   bottomTextColor,
@@ -31,32 +33,24 @@ const FoodCardImageOverflow = ({
       ))
 
   return (
-    <Box width='100%'>
-      <Box
-        src={imgUrl}
-        component='img'
-        sx={{
-          width: '100%',
-          height: 'auto',
-          objectFit: 'cover',
-          borderTopLeftRadius: '24px',
-          borderTopRightRadius: '24px',
-        }}
-      />
-
+    <Box width='100%' height='100%' display='flex' flexDirection='column'>
       <Card
         sx={{
-          maxWidth: '100%',
           display: 'flex',
           flexDirection: 'column',
+          height: '100%',
           alignItems: 'center',
           boxShadow: '0 4px 8px 0 rgba(0, 0, 0, .2)',
-          borderRadius: 0,
-          borderBottomLeftRadius: '24px',
-          borderBottomRightRadius: '24px',
-          marginTop: '-6px',
+          borderRadius: '24px',
         }}
       >
+        <CardMedia
+          component='img'
+          image={imageUrl}
+          sx={{ width: '100%', height: 'auto', maxHeight: 280 }}
+          title={imageTitle}
+        />
+
         <CardHeader
           title={title}
           titleTypographyProps={{
@@ -71,7 +65,7 @@ const FoodCardImageOverflow = ({
           }}
         />
 
-        <CardContent>
+        <CardContent sx={{ height: '100%' }}>
           {content}
 
           {extraInfo && (
