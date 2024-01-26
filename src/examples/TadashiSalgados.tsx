@@ -204,7 +204,7 @@ const TadashiSalgados = () => {
               // eslint-disable-next-line react/no-array-index-key
               <Grid item xs={4} md={4} lg={4} key={index}>
                 <FoodCardImageOverflow
-                  imgUrl='https://media.istockphoto.com/id/1164397436/pt/foto/plate-with-coxinhas-a-typical-croquette-of-brazil.jpg?s=612x612&w=0&k=20&c=RMyUF1iQsTayrupjUgGe4HvUJKVoHSiJyIXHh4kGvaQ='
+                  imageUrl='https://media.istockphoto.com/id/1164397436/pt/foto/plate-with-coxinhas-a-typical-croquette-of-brazil.jpg?s=612x612&w=0&k=20&c=RMyUF1iQsTayrupjUgGe4HvUJKVoHSiJyIXHh4kGvaQ='
                   items={['Sabor Incomparável']}
                   title='Coxinha de Frango'
                   extraInfo='28G'
