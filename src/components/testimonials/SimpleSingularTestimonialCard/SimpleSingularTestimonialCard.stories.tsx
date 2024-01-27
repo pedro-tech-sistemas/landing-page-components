@@ -27,14 +27,14 @@ WithImage.args = {
     'https://images.unsplash.com/photo-1580852300654-03c803a14e24?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4.25&w=512&h=512&q=80',
 }
 
-export const WithRating = Template.bind({})
-WithRating.args = {
+export const WithDate = Template.bind({})
+WithDate.args = {
   ...Default.args,
-  rating: 5,
+  ratingDate: '22 de março de 2023',
 }
 
-export const WithImageAndRating = Template.bind({})
-WithImageAndRating.args = {
+export const WithImageAndDate = Template.bind({})
+WithImageAndDate.args = {
   ...WithImage.args,
-  ...WithRating.args,
+  ...WithDate.args,
 }
