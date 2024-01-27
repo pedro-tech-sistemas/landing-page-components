@@ -1,18 +1,27 @@
-import { ReactNode } from 'react'
+import { CSSProperties, ReactNode } from 'react'
 
 import { Box, Stack, StackProps } from '@mui/material'
 
 export interface FullWidthWithImageProps extends StackProps {
   imageUrl: string
+  height?: CSSProperties['height']
   children: ReactNode
 }
 
-const FullWidthWithImage = ({ imageUrl, children, ...rest }: FullWidthWithImageProps) => {
+const FullWidthWithImage = ({
+  imageUrl,
+  height = '100vh',
+  sx,
+  children,
+  ...rest
+}: FullWidthWithImageProps) => {
   return (
     <Stack
       sx={{
         flexDirection: { xs: 'column-reverse', md: 'row' },
-        minHeight: { xs: 'unset', md: '100vh' },
+        minHeight: { xs: 'unset', md: height },
+        height: { xs: '10px', md: height },
+        ...sx,
       }}
       rowGap={2}
       {...rest}
