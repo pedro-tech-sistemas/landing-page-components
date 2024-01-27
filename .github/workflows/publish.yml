@@ -5,10 +5,6 @@ on:
   # Triggers the workflow on published releases
   release:
     types: [published]
-  push:
-    tags:
-      - 'v*-alpha*'
-      - 'v*'
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -41,11 +37,7 @@ jobs:
 
       - name: Publish
         run: |
-          if [[ $GITHUB_REF == refs/tags/v*-alpha* ]]; then
-            npm publish --tag alpha
-          else
-            npm publish
-          fi
+          npm publish
 
         env:
           # We need this to our NPM account
