@@ -19,8 +19,7 @@ const FullWidthWithImage = ({
     <Stack
       sx={{
         flexDirection: { xs: 'column-reverse', md: 'row' },
-        minHeight: { xs: 'unset', md: height },
-        height: { xs: '10px', md: height },
+        height: { xs: '100vh', md: height },
         ...sx,
       }}
       rowGap={2}
@@ -29,8 +28,8 @@ const FullWidthWithImage = ({
       <Box
         sx={{
           display: 'flex',
+          flex: 1,
           width: { xs: '100%', md: '50%' },
-          height: { xs: '50vh', md: 'auto' },
           backgroundImage: `url(${imageUrl})`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
@@ -41,6 +40,7 @@ const FullWidthWithImage = ({
       <Box
         maxWidth='50%'
         boxSizing='border-box'
+        flex={1}
         sx={{ maxWidth: { xs: '100%', md: '50%' }, p: { xs: 2, md: 8 } }}
       >
         {children}
