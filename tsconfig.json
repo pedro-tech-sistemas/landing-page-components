@@ -2,7 +2,9 @@
   "include": ["src"],
   "exclude": [
     "dist",
-    "node_modules"
+    "node_modules",
+    "**/*.stories.tsx",
+    "**/*.stories.js",
   ],
   "compilerOptions": {
     "module": "commonjs",
