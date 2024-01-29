@@ -115,7 +115,7 @@ const CommonHeader = ({
               <img
                 src={logo}
                 alt='logo'
-                style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain' }}
+                style={{ maxHeight: '60px', maxWidth: '100%', objectFit: 'contain' }}
               />
             </Box>
           )}
