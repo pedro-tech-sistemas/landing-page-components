@@ -1,42 +1,60 @@
 import { Box, Typography, TypographyProps } from '@mui/material'
-import { useState, useEffect } from 'react'
+import { keyframes } from '@mui/system'
 
 export interface RotatingTextProps extends TypographyProps {
+  text: string
   words: string[]
   ariaLabel?: string
 }
 
-const RotatingText = ({ words, ariaLabel, ...restProps }: RotatingTextProps) => {
-  const [index, setIndex] = useState(0)
+const generateSpinWordsAnimation = (wordCount: number) => {
+  const keyframesPercentage = 100 / wordCount
+  let keyframesString = ''
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setIndex((i) => (i + 1) % words.length)
-    }, 3000)
+  for (let i = 0; i < wordCount; i += 1) {
+    keyframesString += `
+      ${keyframesPercentage * i}% { transform: translateY(-${100 * i}%); }
+    `
+  }
 
-    return () => clearInterval(intervalId)
-  }, [])
+  return keyframes`${keyframesString}`
+}
+
+const RotatingText = ({ text, words, sx, ...restProps }: RotatingTextProps) => {
+  const spinWordsAnimation = generateSpinWordsAnimation(words.length)
 
   return (
     <Box
-      style={{ height: '50px', overflow: 'hidden', position: 'relative' }}
-      role='status'
-      aria-live='polite'
-      aria-label={ariaLabel}
+      sx={{
+        boxSizing: 'content-box',
+        height: '60px',
+        padding: '50px 30px',
+        display: 'flex',
+      }}
     >
-      {words.map((word, i) => (
-        <Typography
-          key={word}
-          style={{
-            position: 'absolute',
-            bottom: `${(index - i) * 100}%`,
-            transition: 'bottom 0.5s',
-          }}
-          {...restProps}
-        >
-          {word}
-        </Typography>
-      ))}
+      <Typography {...restProps} sx={{ whiteSpace: 'normal', overflowWrap: 'break-word', ...sx }}>
+        {text}
+      </Typography>
+
+      <Box sx={{ overflow: 'hidden' }}>
+        {words.map((word) => (
+          <Typography
+            key={word}
+            sx={{
+              display: 'block',
+              height: '100%',
+              paddingLeft: '10px',
+              animation: `${spinWordsAnimation} ${words.length + 1}s infinite`,
+              whiteSpace: 'normal',
+              overflowWrap: 'break-word',
+              ...sx,
+            }}
+            {...restProps}
+          >
+            {word}
+          </Typography>
+        ))}
+      </Box>
     </Box>
   )
 }
