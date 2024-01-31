@@ -7,6 +7,7 @@ export interface FoodCardProps {
   name: string
   description: string
   price?: string
+  priceDetail?: string
   stars?: string
   votes?: number
 }
@@ -17,6 +18,7 @@ const FoodCard = ({
   name,
   description,
   price,
+  priceDetail,
   stars,
   votes,
 }: FoodCardProps) => {
@@ -62,7 +64,12 @@ const FoodCard = ({
         )}
       </CardMedia>
 
-      <CardContent sx={{ background: grey[100], height: '100%' }}>
+      <CardContent
+        sx={{
+          background: grey[100],
+          height: '100%',
+        }}
+      >
         <Typography gutterBottom variant='h5' component='div'>
           {name}
         </Typography>
@@ -72,8 +79,11 @@ const FoodCard = ({
         </Typography>
 
         {price && (
-          <Typography variant='h4' mt={2}>
+          <Typography variant='h4' mt={2} display='inline-flex'>
             R${price}
+            <Typography variant='caption' color='text.secondary' marginLeft={0.5}>
+              {priceDetail}
+            </Typography>
           </Typography>
         )}
       </CardContent>
