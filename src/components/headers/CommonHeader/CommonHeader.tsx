@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode, useState } from 'react'
+import { CSSProperties, ReactNode, useEffect, useState } from 'react'
 
 import {
   AppBar,
@@ -44,7 +44,7 @@ const CommonHeader = ({
   bgcolor,
 }: CommonHeaderProps) => {
   const [mobileOpen, setMobileOpen] = useState(false)
-
+  const [container, setContainer] = useState<HTMLElement | null>(null)
   const theme = useTheme()
   const primaryColor = theme.palette.primary.main || bgcolor
   const appBarBgColor = hasGradientBackground
@@ -53,13 +53,13 @@ const CommonHeader = ({
 
   const handleDrawerToggle = () => setMobileOpen((prevState) => !prevState)
 
-  const container = window !== undefined ? () => window.document.body : undefined
-
   const shouldHide = useHideOnScroll(hideOnScrollDown)
 
-  /*
-    This will be rendered on mobile version once the menu is opened
-  */
+  useEffect(() => {
+    setContainer(window.document.body)
+  }, [])
+
+  // This will be rendered on mobile version once the menu is opened
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <IconButton sx={{ position: 'absolute', right: '12px', top: '12px' }}>
