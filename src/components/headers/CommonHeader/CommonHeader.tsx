@@ -69,7 +69,7 @@ const CommonHeader = ({
       <List sx={{ mt: 6 }}>
         {links.map((link) => (
           <ListItem key={link.label} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
+            <ListItemButton href={link.url} sx={{ textAlign: 'center' }}>
               <ListItemText primary={link.label} />
             </ListItemButton>
           </ListItem>

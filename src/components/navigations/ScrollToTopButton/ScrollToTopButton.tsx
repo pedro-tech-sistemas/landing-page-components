@@ -38,10 +38,10 @@ const ScrollToTopButton = ({ sx, ...restProps }: ScrollToTopButtonProps) => {
         position: 'fixed',
         bottom: 16,
         right: 0,
-        zIndez: 1000,
         background: grey[400],
         borderTopRightRadius: 0,
         borderBottomRightRadius: 0,
+        zIndex: 999,
         ...sx,
       }}
       {...restProps}

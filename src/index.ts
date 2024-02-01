@@ -27,7 +27,6 @@ export { default as GoogleLocalization } from './components/localization/GoogleL
 
 // Navigations
 export { default as ButtonNavigation } from './components/navigations/ButtonNavigation/ButtomNavigation'
-export { default as ScrollToTop } from './components/navigations/ScrollToTop/ScrollToTop'
 export { default as ScrollToTopButton } from './components/navigations/ScrollToTopButton/ScrollToTopButton'
 
 // Sections

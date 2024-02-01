@@ -24,7 +24,7 @@ const TadashiSalgados = () => {
         logo='https://th.bing.com/th/id/OIP.i1FtORNJy2Jz1Q5_d4L2-AAAAA?rs=1&pid=ImgDetMain'
         links={[
           { label: 'Sobre', url: '/' },
-          { label: 'Cardápio', url: '/' },
+          { label: 'Cardápio', url: '#menu' },
           { label: 'Contato', url: '/' },
         ]}
         hideOnScrollDown
@@ -196,7 +196,7 @@ const TadashiSalgados = () => {
         titleColor={grey[50]}
         bgcolor={orange[800]}
         py={4}
-        id='#menu'
+        id='menu'
       >
         <Section mt={4}>
           <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>

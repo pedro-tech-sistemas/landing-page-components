@@ -74,7 +74,7 @@ const FooterWithLogo = ({
             <Box display='flex' columnGap={2}>
               {socialLinks?.map(({ icon, url }) => (
                 <Tooltip title={icon} key={icon}>
-                  <Link key={icon} href={url}>
+                  <Link key={icon} href={url} target='_blank'>
                     <Typography color={textColor}>{renderIcon(icon)}</Typography>
                   </Link>
                 </Tooltip>
