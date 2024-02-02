@@ -21,6 +21,7 @@ export { default as FooterWithLogo } from './components/footers/FooterWithLogo/F
 
 // Headers
 export { default as CommonHeader } from './components/headers/CommonHeader/CommonHeader'
+export { default as SideBarHeader } from './components/headers/SideBarHeader/SideBarHeader'
 
 // Localizations
 export { default as GoogleLocalization } from './components/localization/GoogleLocalization/GoogleLocalization'

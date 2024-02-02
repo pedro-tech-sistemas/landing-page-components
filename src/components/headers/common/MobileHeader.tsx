@@ -25,7 +25,16 @@ const MobileHeader = ({ links, logo, smBreakpoint = 'sm' }: MobileHeaderProps) =
   return (
     <Box sx={{ flexGrow: 1, display: { xs: 'flex', [smBreakpoint]: 'none' } }}>
       <Stack direction='row' px={1} justifyContent='space-between' alignItems='center' width='100%'>
-        <Box>{logo && <img src={logo} alt='logo' width='120' height='auto' />}</Box>
+        <Box>
+          {logo && (
+            <img
+              src={logo}
+              alt='logo'
+              width='auto'
+              style={{ width: '100%', maxHeight: '60px', background: 'transparent' }}
+            />
+          )}
+        </Box>
 
         <Box>
           <IconButton
