@@ -41,3 +41,9 @@ Default.args = {
     </Typography>,
   ],
 }
+
+export const WithCustomBackgroundColor = Template.bind({})
+WithCustomBackgroundColor.args = {
+  ...Default.args,
+  bgcolor: 'green',
+}

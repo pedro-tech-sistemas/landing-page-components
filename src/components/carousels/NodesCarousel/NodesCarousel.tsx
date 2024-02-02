@@ -6,9 +6,10 @@ import Carousel from '../Carousel'
 export interface NodesCarouselProps {
   items: ReactNode[]
   height?: CSSProperties['height']
+  bgcolor?: CSSProperties['backgroundColor']
 }
 
-const NodesCarousel = ({ items, height = '430px' }: NodesCarouselProps) => {
+const NodesCarousel = ({ items, height = '430px', bgcolor }: NodesCarouselProps) => {
   const renderItem = (item: ReactNode, index: number) => (
     <Box
       key={index}
@@ -23,7 +24,11 @@ const NodesCarousel = ({ items, height = '430px' }: NodesCarouselProps) => {
     </Box>
   )
 
-  return <Carousel items={items} height={height} renderItem={renderItem} />
+  return (
+    <Box bgcolor={bgcolor}>
+      <Carousel items={items} height={height} renderItem={renderItem} />
+    </Box>
+  )
 }
 
 export default NodesCarousel
