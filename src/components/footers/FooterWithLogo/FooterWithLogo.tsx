@@ -91,7 +91,7 @@ const FooterWithLogo = ({
             sx={{ flexDirection: { xs: 'column', md: 'row' } }}
           >
             {copy && (
-              <Typography variant='body2' textAlign='center'>
+              <Typography variant='body2' textAlign='center' color={textColor}>
                 © {copy}
               </Typography>
             )}
@@ -109,9 +109,9 @@ const FooterWithLogo = ({
 
                 <Box sx={{ maxWidth: '40px' }}>
                   <img
-                    src='https://www.strunkmedia.com/wp-content/uploads/2018/05/bigstock-Print-163213010.png'
+                    src='/images/logobranco.png'
                     alt='Logo'
-                    style={{ width: '100%', height: 'auto', background: 'transparent' }}
+                    style={{ width: '100px', height: 'auto', background: 'transparent' }}
                   />
                 </Box>
               </Box>
