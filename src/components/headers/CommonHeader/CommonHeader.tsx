@@ -1,28 +1,12 @@
-import { CSSProperties, ReactNode, useEffect, useState } from 'react'
+import { CSSProperties, ReactNode } from 'react'
 
-import {
-  AppBar,
-  Box,
-  Container,
-  Drawer,
-  IconButton,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-} from '@mui/material'
+import { AppBar, Box, Container, List, ListItem, ListItemButton, ListItemText } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
-import MenuIcon from '@mui/icons-material/Menu'
-import CloseIcon from '@mui/icons-material/Close'
 import CTAButton from '../../buttons/CTAButton/CTAButton'
 import useHideOnScroll from '../../../hooks/useHideOnScroll'
+import MobileHeader, { MobileHeaderProps } from '../common/MobileHeader'
 
-export interface CommonHeaderProps {
-  logo?: string
-  links: {
-    label: string
-    url: string
-  }[]
+export type CommonHeaderProps = MobileHeaderProps & {
   textColor?: CSSProperties['color']
   ctaButtonLabel?: string
   ctaButtonAction?: () => void
@@ -43,42 +27,13 @@ const CommonHeader = ({
   hasGradientBackground = false,
   bgcolor,
 }: CommonHeaderProps) => {
-  const [mobileOpen, setMobileOpen] = useState(false)
-  const [container, setContainer] = useState<HTMLElement | null>(null)
   const theme = useTheme()
   const primaryColor = theme.palette.primary.main || bgcolor
   const appBarBgColor = hasGradientBackground
     ? `linear-gradient(${primaryColor} 46%, rgba(0, 0, 0, 0) 100%)`
     : primaryColor
 
-  const handleDrawerToggle = () => setMobileOpen((prevState) => !prevState)
-
   const shouldHide = useHideOnScroll(hideOnScrollDown)
-
-  useEffect(() => {
-    setContainer(window.document.body)
-  }, [])
-
-  // This will be rendered on mobile version once the menu is opened
-  const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <IconButton sx={{ position: 'absolute', right: '12px', top: '12px' }}>
-        <CloseIcon />
-      </IconButton>
-
-      <List sx={{ mt: 6 }}>
-        {links.map((link) => (
-          <ListItem key={link.label} disablePadding>
-            <ListItemButton href={link.url} sx={{ textAlign: 'center' }}>
-              <ListItemText primary={link.label} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-
-      <img src={logo} alt='Logo' width='80px' height='auto' style={{ marginTop: '16px' }} />
-    </Box>
-  )
 
   return (
     <>
@@ -144,34 +99,7 @@ const CommonHeader = ({
             )}
           </List>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' } }}>
-            <IconButton
-              size='large'
-              aria-controls='menu-appbar'
-              aria-haspopup='true'
-              onClick={handleDrawerToggle}
-              color='inherit'
-              aria-label='Ver menu'
-            >
-              <MenuIcon color='secondary' />
-            </IconButton>
-
-            <Drawer
-              container={container}
-              variant='temporary'
-              open={mobileOpen}
-              onClose={handleDrawerToggle}
-              ModalProps={{
-                keepMounted: true,
-              }}
-              sx={{
-                display: { xs: 'block', sm: 'none' },
-                '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '100%' },
-              }}
-            >
-              {drawer}
-            </Drawer>
-          </Box>
+          <MobileHeader links={links} logo={logo} />
         </Container>
       </AppBar>
 
