@@ -9,7 +9,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
-import CTAButton from 'src/components/buttons/CTAButton/CTAButton'
+import CTAButton from '../../buttons/CTAButton/CTAButton'
 import MobileHeader, { MobileHeaderProps } from '../common/MobileHeader'
 
 export type SideBarHeaderProps = MobileHeaderProps & {
