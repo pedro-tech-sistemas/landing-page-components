@@ -6,6 +6,7 @@ import FoodCard from 'src/components/foods/FoodCard/FoodCard'
 import GoogleLocalization from 'src/components/localization/GoogleLocalization/GoogleLocalization'
 import FooterWithLogo from 'src/components/footers/FooterWithLogo/FooterWithLogo'
 import FullWidthWithImage from 'src/components/sections/FullWidthWithImage/FullWidthWithImage'
+import WhatsappButton from 'src/components/buttons/WhatsappButton/WhatsappButton'
 import Header from '../components/headers/CommonHeader/CommonHeader'
 import ImagesCarousel from '../components/carousels/ImagesCarousel/ImagesCarousel'
 import ScrollToTopButton from '../components/navigations/ScrollToTopButton/ScrollToTopButton'
@@ -19,6 +20,8 @@ const TadashiSalgados = () => {
   return (
     <Box>
       <ScrollToTopButton />
+
+      <WhatsappButton href='#example' />
 
       <Header
         logo='https://th.bing.com/th/id/OIP.i1FtORNJy2Jz1Q5_d4L2-AAAAA?rs=1&pid=ImgDetMain'

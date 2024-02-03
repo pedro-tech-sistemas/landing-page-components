@@ -14,6 +14,7 @@ export type FooterWithLogoProps = {
     icon: SocialMedia
     url: string
   }[]
+  isDarkBackground?: boolean
 }
 
 const renderIcon = (icon: 'facebook' | 'instagram' | 'linkedin' | 'twitter') => {
@@ -38,6 +39,7 @@ const FooterWithLogo = ({
   socialLinks,
   bgColor = 'primary.main',
   textColor = grey[50],
+  isDarkBackground = true,
 }: FooterWithLogoProps) => {
   return (
     <Box bgcolor={bgColor}>
@@ -97,7 +99,7 @@ const FooterWithLogo = ({
             )}
 
             <Link
-              href='www.pedrotechsistemas.com'
+              href='https://api.whatsapp.com/send?phone=5519989242888'
               underline='none'
               target='_blank'
               rel='noopener noreferrer'
@@ -107,9 +109,13 @@ const FooterWithLogo = ({
                   Feito por:
                 </Typography>
 
-                <Box sx={{ maxWidth: '40px' }}>
+                <Box sx={{ maxWidth: '40px', display: 'grid' }}>
                   <img
-                    src='/images/logobranco.png'
+                    src={
+                      isDarkBackground
+                        ? '/assets/images/logobranco.png'
+                        : '/assets/images/logoazulescuro.png'
+                    }
                     alt='Logo'
                     style={{ width: '100px', height: 'auto', background: 'transparent' }}
                   />

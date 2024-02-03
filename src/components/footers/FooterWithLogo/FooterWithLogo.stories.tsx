@@ -57,6 +57,7 @@ export const WithCustomBackgroundColor = Template.bind({})
 WithCustomBackgroundColor.args = {
   ...Complete.args,
   bgColor: 'greenyellow',
+  isDarkBackground: false,
 }
 
 export const WithCustomTextColor = Template.bind({})

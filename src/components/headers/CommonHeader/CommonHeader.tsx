@@ -120,7 +120,7 @@ const CommonHeader = ({
             </Box>
           )}
 
-          <List sx={{ display: { xs: 'none', md: 'flex' } }}>
+          <List sx={{ display: { xs: 'none', sm: 'flex' } }}>
             {links.map((link) => (
               <ListItem key={link.label} disablePadding sx={{ width: 'auto' }}>
                 <ListItemButton href={link.url} sx={{ textAlign: 'center' }}>
@@ -144,7 +144,7 @@ const CommonHeader = ({
             )}
           </List>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' } }}>
             <IconButton
               size='large'
               aria-controls='menu-appbar'
@@ -165,7 +165,7 @@ const CommonHeader = ({
                 keepMounted: true,
               }}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: { xs: 'block', sm: 'none' },
                 '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '100%' },
               }}
             >

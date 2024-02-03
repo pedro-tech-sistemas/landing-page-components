@@ -28,7 +28,7 @@ const SimpleSingularTestimonialCard = ({
         }}
       >
         <Typography fontWeight={500} color='text.secondary' component='blockquote'>
-          {text}
+          &quot;{text}&quot;
         </Typography>
 
         <Stack

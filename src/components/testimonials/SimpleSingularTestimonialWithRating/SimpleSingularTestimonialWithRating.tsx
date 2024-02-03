@@ -22,7 +22,7 @@ const SimpleSingularTestimonialWithRating = ({
       <Rating name='votos' value={rating} max={5} size='medium' readOnly />
 
       <Typography fontWeight='500' fontSize={14} color='text.secondary' component='blockquote'>
-        {testimonialText}
+        &quot;{testimonialText}&quot;
       </Typography>
 
       <Stack direction='row' alignItems='center' columnGap={2}>
@@ -32,6 +32,7 @@ const SimpleSingularTestimonialWithRating = ({
           <Typography fontWeight='600' fontSize={20}>
             {name}
           </Typography>
+
           <Typography color='text.secondary' fontSize={14}>
             {ratingDate}
           </Typography>

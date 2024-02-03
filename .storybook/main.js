@@ -6,7 +6,7 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-links',
   ],
-  staticDirs: ['../src/assets'],
+  staticDirs: ['../src'],
   framework: {
     name: '@storybook/react-webpack5',
     options: {},
