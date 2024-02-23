@@ -5,6 +5,7 @@ export { default as myTheme } from './theme/theme'
 export { default as CTAButton } from './components/buttons/CTAButton/CTAButton'
 export { default as CuteButton } from './components/buttons/CuteButton/CuteButton'
 export { default as ScrollToSectionButton } from './components/buttons/ScrollToSectionButton/ScrollToSectionButton'
+export { default as WhatsappButton } from './components/buttons/WhatsappButton/WhatsappButton'
 
 // Carousels
 export { default as ImagesCarousel } from './components/carousels/ImagesCarousel/ImagesCarousel'
